@@ -1,5 +1,5 @@
 # newer versions go on top
-- version: "0.7.5"
+- version: "0.7.7"
   changes:
     - description: Added Messaging dashboard.
       type: enhancement

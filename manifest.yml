@@ -1,7 +1,7 @@
 format_version: 1.0.0
 name: twilio
 title: "Twilio Events"
-version: 0.7.5
+version: 0.7.7
 license: basic
 description: "Collect logs and events from Twilio with Elastic Agent"
 type: integration
@@ -30,5 +30,3 @@ policy_templates:
         description: Collecting logs and events from Twilio
 owner:
   github: slintab/twilio-elastic-integration
-
-

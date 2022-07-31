@@ -2,7 +2,7 @@
 
 The Twilio Events integration enables you to collect, monitor and visualize [Twilio Events](https://www.twilio.com/docs/events/event-types). 
 
-The integration creates an [HTTP endpoint](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-input-http_endpoint.html), which listens for Twilio events and ingests then into Elasticsearch.
+The integration creates an [HTTP endpoint](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-input-http_endpoint.html), which listens for Twilio events and ingests them into Elasticsearch.
 
 ### Usage
 
