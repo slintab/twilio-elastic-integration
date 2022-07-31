@@ -1,0 +1,73 @@
+{
+    "attributes": {
+        "columns": [
+            "event.action",
+            "twilio.Messaging.MessageStatus.messageSid",
+            "twilio.Messaging.MessageStatus.accountSid",
+            "twilio.Messaging.MessageStatus.from",
+            "twilio.Messaging.MessageStatus.to",
+            "twilio.Messaging.MessageStatus.messageStatus",
+            "twilio.Messaging.MessageStatus.errorCode"
+        ],
+        "description": "",
+        "grid": {
+            "columns": {
+                "event.action": {
+                    "width": 163
+                },
+                "twilio.Messaging.MessageStatus.accountSid": {
+                    "width": 197.33333333333337
+                },
+                "twilio.Messaging.MessageStatus.eventName": {
+                    "width": 100
+                },
+                "twilio.Messaging.MessageStatus.from": {
+                    "width": 86.33333333333331
+                },
+                "twilio.Messaging.MessageStatus.messageSid": {
+                    "width": 237
+                },
+                "twilio.Messaging.MessageStatus.messageStatus": {
+                    "width": 102.16666666666663
+                },
+                "twilio.Messaging.MessageStatus.to": {
+                    "width": 44
+                },
+                "twilio.id": {
+                    "width": 176.8
+                }
+            }
+        },
+        "hideChart": false,
+        "kibanaSavedObjectMeta": {
+            "searchSourceJSON": {
+                "filter": [],
+                "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                "query": {
+                    "language": "kuery",
+                    "query": ""
+                }
+            }
+        },
+        "sort": [
+            [
+                "@timestamp",
+                "desc"
+            ]
+        ],
+        "title": "SMS log"
+    },
+    "coreMigrationVersion": "8.3.2",
+    "id": "twilio-d08621f0-110a-11ed-b22f-13e74b0eac84",
+    "migrationVersion": {
+        "search": "8.0.0"
+    },
+    "references": [
+        {
+            "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+            "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+            "type": "index-pattern"
+        }
+    ],
+    "type": "search"
+}

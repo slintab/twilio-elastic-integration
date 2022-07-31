@@ -1,0 +1,1212 @@
+- name: twilio
+  type: group
+  description: Fields for Twilio events.
+  fields:
+    - name: specversion
+      type: keyword
+      description: CloudEvents specification version used for the event
+    - name: type
+      type: keyword
+      description: Type of the event
+    - name: source
+      type: keyword
+      description: Source of the event
+    - name: id
+      type: keyword
+      description: Unique identifier of the event
+    - name: dataschema
+      type: keyword
+      description: Schema used for the event
+    - name: datacontenttype
+      type: keyword
+      description: Content type of the data in the event
+    - name: time
+      type: date
+      description: Date and time at which the event was triggered
+    - name: ErrorLogs.Error
+      type: group
+      description: Error event data
+      fields:
+        - name: sid
+          type: keyword
+          description: SID for the debug event
+        - name: account_sid
+          type: keyword
+          description: The accound SID the debug event belongs to
+        - name: date_created
+          type: keyword
+          description: The date the debug event was created
+        - name: level
+          type: keyword
+          description: The log level of the debug event
+        - name: master_account_sid
+          type: keyword
+          description: The account SID of the parent account the debug event belongs to
+        - name: request_sid
+          type: keyword
+          description: The request SID  of the debug event
+        - name: service_sid
+          type: keyword
+          description: The service SID of the debug event
+        - name: correlation_sid
+          type: keyword
+          description: The correlation SID of the debug event
+        - name: product_name
+          type: keyword
+          description: The Twilio product which created the debug event
+        - name: error_code
+          type: keyword
+          description: The Twilio error code which is associated with the debug event
+        - name: payload
+          type: keyword
+          description: The payload of the debug event
+    - name: EngagementIntelligence.TranscriptEvent
+      type: group
+      description: Transcript event data
+      fields:
+        - name: service_sid
+          type: keyword
+          description: Service identifier
+        - name: transcript_sid
+          type: keyword
+          description: Transcript identifier
+        - name: account_sid
+          type: keyword
+          description: Account that generated the event
+        - name: date_created
+          type: date
+          description: Creation date of the event
+    - name: SuperSim.ConnectionEvent
+      type: group
+      description: Connection event data
+      fields:
+        - name: event_sid
+          type: keyword
+          description: Sid of the event. This is a copy of ce_id header field.
+        - name: event_type
+          type: keyword
+          description: Type of connection event. This is a copy of ce_type header field.
+        - name: account_sid
+          type: keyword
+          description: Account Sid of the SuperSIM this record belongs to.
+        - name: sim_sid
+          type: keyword
+          description: Sim Sid of the SuperSIM this record belongs to.
+        - name: fleet_sid
+          type: keyword
+          description: The SID of the Fleet to which the Super SIM is assigned.
+        - name: sim_iccid
+          type: keyword
+          description: ICCID of the SuperSIM this record belongs to.
+        - name: sim_unique_name
+          type: keyword
+          description: Unique name of the SuperSIM this record belongs to.
+        - name: timestamp
+          type: date
+          description: UTC timestamp when the event occurred in ISO8601 format.
+        - name: network
+          type: object
+          description: An object containing information about the network that the Super SIM attempted to connect to or is connected to.
+        - name: rat_type
+          type: keyword
+          description: The generation of wireless technology that the device was using.
+        - name: location
+          type: object
+          description: An object containing information about the location of the cell to which the device was connected.  May be null as location information is not guaranteed to be sent by the visited network.
+        - name: imei
+          type: keyword
+          description: The 'international mobile equipment identity' is the unique ID of the device using the SIM to connect. May be null as it is not guaranteed that the visited network will pass on this information.
+        - name: apn
+          type: keyword
+          description: Access Point Name used to establish a data session.
+        - name: imsi
+          type: keyword
+          description: The IMSI used by the Super SIM to connect.
+        - name: data_session_sid
+          type: keyword
+          description: Data Session Sid only associated with DataSession events.
+        - name: data_session_start_time
+          type: keyword
+          description: Data Session start time in UTC and in ISO8601 format.
+        - name: data_session_end_time
+          type: keyword
+          description: Data Session end time in UTC and in ISO8601 format.
+        - name: data_session_update_start_time
+          type: keyword
+          description: Data Session update start time in UTC and in ISO8601 format.
+        - name: data_session_update_end_time
+          type: keyword
+          description: Data Session update end time in UTC and in ISO8601 format.
+        - name: data_upload
+          type: integer
+          description: The amount of data uploaded from the device in bytes between the data_session_update_start_time and data_session_update_end_time.
+        - name: data_download
+          type: integer
+          description: The amount of data downloaded to the device in bytes between the data_session_update_start_time and data_session_update_end_time.
+        - name: data_total
+          type: integer
+          description: The amount of data downloaded to the device or uploaded from the device in bytes between the data_session_update_start_time and data_session_update_end_time.
+        - name: data_modifier
+          type: keyword
+          description: Indicates if the SuperSIM's data is blocked due to the system such as when the SIM has reached its data limit.
+        - name: ip_address
+          type: keyword
+          description: The IP address assigned to the device. This IP address is not publicly addressable.
+        - name: error
+          type: object
+          description: Object containing information about an error encountered.
+        - name: data_session_data_upload
+          type: integer
+          description: Total number of bytes uploaded over the duration of the data session. Cumulative amount of data_upload for all events for this data session so far.
+        - name: data_session_data_download
+          type: integer
+          description: Total number of bytes downloaded over the duration of the data session. Cumulative amount of data_download for all events for this data session so far.
+        - name: data_session_data_total
+          type: integer
+          description: Total number of bytes uploaded or downloaded over the duration of the data session
+    - name: Messaging.InboundMessageV1
+      type: group
+      description: Inbound message event data
+      fields:
+        - name: messageSid
+          type: keyword
+          description: Id of message which the event belongs to
+        - name: timestamp
+          type: date
+          description: Time of the event
+        - name: accountSid
+          type: keyword
+          description: Id of the Twilio account which was used while sending the message
+        - name: eventName
+          type: keyword
+          description: Description of this event
+        - name: from
+          type: keyword
+          description: From number of the message
+        - name: to
+          type: keyword
+          description: To number of the message
+        - name: numSegments
+          type: integer
+          description: Number of segments
+        - name: numMedia
+          type: integer
+          description: Number of media
+        - name: body
+          type: keyword
+          description: Body of the message
+        - name: toCountry
+          type: keyword
+          description: Destination country
+        - name: toState
+          type: keyword
+          description: Destination state
+        - name: toCity
+          type: keyword
+          description: Destination city
+        - name: toZip
+          type: keyword
+          description: Destination zip code
+        - name: fromCountry
+          type: keyword
+          description: Source country
+        - name: fromState
+          type: keyword
+          description: Source state
+        - name: fromCity
+          type: keyword
+          description: Source city
+        - name: fromZip
+          type: keyword
+          description: Source zip code
+    - name: Messaging.MessageStatus
+      type: group
+      description: Message status event data
+      fields:
+        - name: messageSid
+          type: keyword
+          description: Id of message which the event belongs to
+        - name: timestamp
+          type: date
+          description: Time of the event
+        - name: accountSid
+          type: keyword
+          description: Id of the Twilio account which was used while sending the message
+        - name: eventName
+          type: keyword
+          description: Description of this event
+        - name: apiVersion
+          type: keyword
+          description: Twilio API version used while sending the message
+        - name: from
+          type: keyword
+          description: From number of the message
+        - name: to
+          type: keyword
+          description: To number of the message
+        - name: messageStatus
+          type: keyword
+          description: The status of the message. Message delivery information is reflected in message status. The possible values are QUEUED, FAILED, SENT, DELIVERED, UNDELIVERED, READ.
+        - name: messagingServiceSid
+          type: keyword
+          description: This field is set to id of messaging service used if the message is sent through a messaging service
+        - name: errorCode
+          type: integer
+          description: This field is set to the error code if delivery wasn't successful and an error has occurred
+        - name: body
+          type: keyword
+          description: Body of the message
+        - name: statusCallBackUrl
+          type: keyword
+          description: Status callback url
+    - name: Studio.FlowExecutionEvent
+      type: group
+      description: Flow execution event data
+      fields:
+        - name: execution_sid
+          type: keyword
+          description: Execution SID from Event
+        - name: account_sid
+          type: keyword
+          description: Account SID from Event
+        - name: flow_sid
+          type: keyword
+          description: Flow SID from Event
+        - name: contact_channel_address
+          type: keyword
+          description: Address of contact channel
+        - name: status
+          type: keyword
+          description: Execution Status
+        - name: ended_reason
+          type: keyword
+          description: Reason to end execution
+        - name: date_created
+          type: date
+          description: Execution creation date
+        - name: date_updated
+          type: date
+          description: Date updated for execution event
+        - name: started_by
+          type: keyword
+          description: SID of the resource that initiated the Execution
+        - name: flow_revision
+          type: integer
+          description: Revision number of the Flow that was used to handle this Execution
+    - name: Studio.FlowStepEvent
+      type: group
+      description: Flow step event data
+      fields:
+        - name: parent_step_sid
+          type: keyword
+          description: Parent Step SID from Event
+        - name: step_sid
+          type: keyword
+          description: Step SID from Event
+        - name: execution_sid
+          type: keyword
+          description: Execution SID from Event
+        - name: account_sid
+          type: keyword
+          description: Account SID from Event
+        - name: flow_sid
+          type: keyword
+          description: Flow SID from Event
+        - name: name
+          type: keyword
+          description: Name of Step from Event
+        - name: transitioned_from
+          type: keyword
+          description: Step that the event transitioned from
+        - name: transitioned_to
+          type: keyword
+          description: Step that the event transitioned to
+        - name: date_created
+          type: date
+          description: Step creation date
+    - name: TaskRouter.WDSEvent
+      type: group
+      description: WSDEvent data
+      fields:
+        - name: sid
+          type: keyword
+          description: SID
+        - name: name
+          type: keyword
+          description: name
+        - name: account_sid
+          type: keyword
+          description: Account SID
+        - name: account_friendly_name
+          type: keyword
+          description: Account friendly name
+        - name: parent_account_sid
+          type: keyword
+          description: Parent account SID
+        - name: parent_friendly_name
+          type: keyword
+          description: Parent account friendly name
+        - name: timestamp
+          type: date
+          description: Timestamp
+        - name: level
+          type: keyword
+          description: Level
+        - name: group
+          type: keyword
+          description: Group
+        - name: product_name
+          type: keyword
+          description: Product name
+        - name: publisher
+          type: keyword
+          description: Publisher
+        - name: publisher_metadata
+          type: keyword
+          description: Publisher metadata
+        - name: payload_type
+          type: keyword
+          description: Payload type
+        - name: payload
+          type: group
+          description: WSDEvent event payload
+          fields:
+            - name: sid
+              type: keyword
+              description: SID
+            - name: eventtype
+              type: keyword
+              description: Event type
+            - name: account_sid
+              type: keyword
+              description: Account SID
+            - name: timestamp
+              type: date
+              description: Timestamp
+            - name: workspace_sid
+              type: keyword
+              description: Workspace SID
+            - name: workspace_name
+              type: keyword
+              description: Worspace name
+            - name: task_sid
+              type: keyword
+              description: Task SID
+            - name: task_attributes
+              type: keyword
+              description: Task attributes
+            - name: task_age
+              type: integer
+              description: Task age
+            - name: task_date_created
+              type: keyword
+              description: Task date created
+            - name: task_priority
+              type: integer
+              description: Task Priority
+            - name: task_assignment_status
+              type: keyword
+              description: Task assignment status
+            - name: task_completed_reason
+              type: keyword
+              description: Task completed reason
+            - name: task_canceled_reason
+              type: keyword
+              description: Task canceled reason
+            - name: reason
+              type: keyword
+              description: Reason
+            - name: task_channel_sid
+              type: keyword
+              description: Task channel SID
+            - name: task_channel_unique_name
+              type: keyword
+              description: Task Channel unique name
+            - name: reservation_sid
+              type: keyword
+              description: Reservation SID
+            - name: worker_sid
+              type: keyword
+              description: Worker SID
+            - name: worker_name
+              type: keyword
+              description: Worker name
+            - name: worker_attributes
+              type: keyword
+              description: Worker attributes
+            - name: worker_activity_sid
+              type: keyword
+              description: Worker activity SID
+            - name: worker_activity_name
+              type: keyword
+              description: Worker activity name
+            - name: worker_time_in_previous_activity
+              type: integer
+              description: Worker time in previous activity in seconds
+            - name: worker_time_in_previous_activity_ms
+              type: integer
+              description: Worker time in previous activity in millis
+            - name: worker_previous_activity_sid
+              type: keyword
+              description: Worker previous activity SID
+            - name: worker_previous_activity_name
+              type: keyword
+              description: Worker previous activity name
+            - name: workflow_sid
+              type: keyword
+              description: Workflow SID
+            - name: workflow_name
+              type: keyword
+              description: Workflow name
+            - name: task_queue_sid
+              type: keyword
+              description: Task queue SID
+            - name: task_queue_name
+              type: keyword
+              description: Task queue name
+            - name: worker_channel_available
+              type: integer
+              description: Worker channel available
+            - name: worker_channel_capacity
+              type: integer
+              description: Worker channel capacity
+            - name: worker_channel_available_capacity
+              type: integer
+              description: Worker channel available capacity
+            - name: worker_channel_previous_capacity
+              type: integer
+              description: Worker channel previous capacity
+            - name: worker_channel_task_count
+              type: integer
+              description: Worker channel task count
+            - name: workflow_filter_name
+              type: keyword
+              description: Workflow filter name
+            - name: workflow_filter_expression
+              type: keyword
+              description: Workflow filter expression
+            - name: workflow_filter_target_expression
+              type: keyword
+              description: Workflow filter target expression
+            - name: workflow_filter_target_name
+              type: keyword
+              description: Workflow filter name
+            - name: previous_task_queue_sid
+              type: keyword
+              description: Previous task queue SID
+            - name: previous_task_queue_name
+              type: keyword
+              description: Previous task queue name
+            - name: previous_task_priority
+              type: integer
+              description: Previous task priority
+            - name: target_changed_reason
+              type: keyword
+              description: Target changed reason
+            - name: task_re_evaluated_reason
+              type: keyword
+              description: Task reevaluated reason
+            - name: task_queue_target_expression
+              type: keyword
+              description: Task queue target expression
+            - name: task_transfer_sid
+              type: keyword
+              description: Task transfer SID
+            - name: transfer_type
+              type: keyword
+              description: Transfer type
+            - name: transfer_initiating_worker_sid
+              type: keyword
+              description: Transfer initiating worker SID
+            - name: transfer_initiating_reservation_sid
+              type: keyword
+              description: Transfer initiating reservation SID
+            - name: transfer_to
+              type: keyword
+              description: Transfer to
+            - name: transfer_mode
+              type: keyword
+              description: Transfer mode
+            - name: transfer_started
+              type: keyword
+              description: Transfer started
+            - name: transfer_failed_reason
+              type: keyword
+              description: Transfer failed reason
+            - name: transfer_status
+              type: keyword
+              description: Transfer status
+            - name: event_description
+              type: keyword
+              description: Event description
+            - name: resource_type
+              type: keyword
+              description: Resource type
+            - name: resource_sid
+              type: keyword
+              description: Resource SID
+            - name: task_routing_target
+              type: keyword
+              description: Task routing target
+            - name: reservation_reason_code
+              type: integer
+              description: Reservation reason code
+            - name: task_age_in_queue
+              type: integer
+              description: Task age in queue
+            - name: task_queue_entered_date
+              type: keyword
+              description: Task queue entered date
+            - name: task_version
+              type: integer
+              description: Task version
+            - name: reservation_version
+              type: integer
+              description: Reservation version
+    - name: VideoInsights.VideoLogAnalyzerParticipantSummary
+      type: group
+      description: Video log analyzer participant summary event data
+      fields:
+        - name: participant_sid
+          type: keyword
+          description: Unique identifier for the participant
+        - name: participant_identity
+          type: keyword
+          description: The application-defined string that uniquely identifies the participant within a Room
+        - name: join_time
+          type: date
+          description: When the participant joined the room
+        - name: leave_time
+          type: date
+          description: When the participant left the room
+        - name: duration_sec
+          type: integer
+          description: Amount of time in seconds the participant was in the room
+        - name: recording_duration_sec
+          type: integer
+          description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+        - name: call_sid
+          type: keyword
+          description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+        - name: account_sid
+          type: keyword
+          description: Account SID associated with the room
+        - name: room_sid
+          type: keyword
+          description: Unique identifier for the room
+        - name: status
+          type: keyword
+          description: Status of the room. Can be in_progress or completed.
+        - name: codecs
+          type: keyword
+          description: Codecs detected from the participant. Can be VP8, H264, or VP9.
+        - name: end_reason
+          type: keyword
+          description: Reason the participant left the room.
+        - name: error_code
+          type: integer
+          description: Errors encountered by the participant.
+        - name: error_code_url
+          type: keyword
+          description: Twilio error code dictionary link.
+        - name: media_region
+          type: keyword
+          description: Twilio media region the participant connected to.
+        - name: record_on_connect
+          type: boolean
+          description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+        - name: is_adhoc
+          type: boolean
+          description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+        - name: num_audio_tracks
+          type: integer
+          description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+        - name: num_video_tracks
+          type: integer
+          description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+        - name: num_data_tracks
+          type: integer
+          description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+        - name: edge_location
+          type: keyword
+          description: Name of the edge location the participant connected to.
+        - name: publisher_info
+          type: group
+          description: Object containing information about the SDK name and version.
+          fields:
+            - name: name
+              type: keyword
+              description: SDK type; e.g., twilio-video-js
+            - name: sdk_version
+              type: keyword
+              description: SDK version
+            - name: platform_name
+              type: keyword
+              description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+            - name: platform_version
+              type: keyword
+              description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+            - name: device_manufacturer
+              type: keyword
+              description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+            - name: device_model
+              type: keyword
+              description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+            - name: device_architecture
+              type: keyword
+              description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+            - name: browser_name
+              type: keyword
+              description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+            - name: browser_version
+              type: keyword
+              description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+            - name: browser_major
+              type: keyword
+              description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+        - name: properties
+          type: group
+          description: Object containing information about the participant's data from the room.
+          fields:
+            - name: record_on_connect
+              type: boolean
+              description: Indicates if the participant was recorded as soon as they joined the room.
+            - name: is_adhoc
+              type: boolean
+              description: Indicates if the participant joined the room ad-hoc.
+            - name: num_audio_tracks
+              type: integer
+              description: Number of audio tracks from the participant.
+            - name: num_video_tracks
+              type: integer
+              description: Number of video tracks from the participant.
+            - name: num_data_tracks
+              type: integer
+              description: Number of data tracks from the participant.
+    - name: VideoInsights.VideoLogAnalyzerRoomSummary
+      type: group
+      description: Video log analyzer room summary event data
+      fields:
+        - name: account_sid
+          type: keyword
+          description: Account SID associated with this room
+        - name: room_sid
+          type: keyword
+          description: Unique identifier for the room
+        - name: room_name
+          type: keyword
+          description: Room friendly name
+        - name: create_time
+          type: date
+          description: Creation time of the room
+        - name: end_time
+          type: date
+          description: End time for the room
+        - name: room_type
+          type: keyword
+          description: Type of room. Can be go, peer_to_peer, group, or group_small
+        - name: room_status
+          type: keyword
+          description: Status of the room. Can be in_progress or completed
+        - name: status_callback
+          type: keyword
+          description: Webhook provided for status callbacks
+        - name: status_callback_method
+          type: keyword
+          description: HTTP method provided for status callback URL
+        - name: created_method
+          type: keyword
+          description: How the room was created. Can be sdk, ad_hoc, or api
+        - name: end_reason
+          type: keyword
+          description: Reason the room ended. Can be room_ended_via_api or timeout
+        - name: max_participants
+          type: integer
+          description: Max number of total participants allowed by the application settings
+        - name: unique_participants
+          type: integer
+          description: Number of participants. May include duplicate identities for participants who left and rejoined
+        - name: unique_participant_identities
+          type: integer
+          description: Unique number of participant identities
+        - name: concurrent_participants
+          type: integer
+          description: Actual number of concurrent participants
+        - name: max_concurrent_participants
+          type: integer
+          description: Maximum number of participants allowed in the room at the same time allowed by the application settings
+        - name: codecs
+          type: keyword
+          description: Codecs used by participants in the room. Can be VP8, H264, or VP9
+        - name: media_region
+          type: keyword
+          description: Region of Twilio media servers for the room
+        - name: room_region
+          type: keyword
+          description: https://www.twilio.com/docs/video/video-log-analyzer/video-log-analyzer-api
+        - name: duration_sec
+          type: integer
+          description: Total room duration from create time to end time
+        - name: total_participant_duration_sec
+          type: integer
+          description: Combined amount of participant time in the room
+        - name: total_recording_duration_sec
+          type: integer
+          description: Combined amount of recorded seconds for participants in the room
+        - name: processing_state
+          type: keyword
+          description: Video Log Analyzer resource state
+        - name: recording_enabled
+          type: boolean
+          description: Boolean indicating if recording is enabled for the room
+        - name: edge_location
+          type: keyword
+          description: Edge location of Twilio media servers for the room
+    - name: VoiceInsights.CallEvent
+      type: group
+      description: Call event data
+      fields:
+        - name: timestamp
+          type: date
+          description: Event time
+        - name: call_sid
+          type: keyword
+          description: Call SID for the call the events are associated with
+        - name: account_sid
+          type: keyword
+          description: The account SID this call belongs to
+        - name: edge
+          type: keyword
+          description: The edge reporting the event
+        - name: name
+          type: keyword
+          description: Event name
+        - name: group
+          type: keyword
+          description: Event group
+        - name: level
+          type: keyword
+          description: Detail level
+        - name: carrier_edge
+          type: object
+          description: Represents the connection between Twilio and our immediate carrier partners. The events here describe the call lifecycle as reported by Twilio's carrier media gateways
+        - name: client_edge
+          type: object
+          description: Represents the Twilio media gateway for Client calls. The events here describe the call lifecycle as reported by Twilio's Voice SDK media gateways
+        - name: sip_edge
+          type: object
+          description: Represents the Twilio media gateway for SIP interface and SIP trunking calls. The events here describe the call lifecycle as reported by Twilio's public media gateways
+        - name: sdk_edge
+          type: object
+          description: Represents the Voice SDK running locally in the browser or in the Android/iOS application. The events here are emitted by the Voice SDK in response to certain call progress events, network changes, or call quality conditions
+    - name: VoiceInsights.CallSummary
+      type: group
+      description: Call summary event data
+      fields:
+        - name: call_sid
+          type: keyword
+          description: SID for the call
+        - name: account_sid
+          type: keyword
+          description: The account SID this call belongs to
+        - name: parent_call_sid
+          type: keyword
+          description: Parent call SID for calls
+        - name: parent_account_sid
+          type: keyword
+          description: Parent account SID for calls placed using subaccounts
+        - name: created_time
+          type: date
+          description: Time the call resource was created. Can be different from start_time in the event of queueing due to CPS.
+        - name: start_time
+          type: date
+          description: Call start time
+        - name: end_time
+          type: date
+          description: Call end time
+        - name: duration
+          type: integer
+          description: Duration between when the call was initiated and the call was ended
+        - name: connect_duration
+          type: integer
+          description: Duration between when the call was answered and when it ended
+        - name: call_type
+          type: keyword
+          description: Describes the call type; client, carrier, sip, trunking
+        - name: call_state
+          type: keyword
+          description: Status of the call
+        - name: from
+          type: group
+          fields:
+            - name: caller
+              type: keyword
+              description: Caller ID of calling party
+            - name: callee
+              type: keyword
+              description: Dialed destination
+            - name: carrier
+              type: keyword
+              description: Serving carrier of destination
+            - name: connection
+              type: keyword
+              description: Landline, mobile, voip
+            - name: number_prefix
+              type: keyword
+              description: E.164 country code + three digits
+            - name: location
+              type: object
+              description: Lat/long for number prefix
+            - name: city
+              type: keyword
+              description: City name based on lat/long or IP address
+            - name: country_code
+              type: keyword
+              description: Two-letter ISO country code
+            - name: country_subdivision
+              type: keyword
+              description: Additional location details; e.g. California
+            - name: ip_address
+              type: ip
+              description: Public IP of Client user
+            - name: sdk
+              type: object
+              description: undefined
+          description: The calling party
+        - name: to
+          type: group
+          fields:
+            - name: caller
+              type: keyword
+              description: Caller ID of calling party
+            - name: callee
+              type: keyword
+              description: Dialed destination
+            - name: carrier
+              type: keyword
+              description: Serving carrier of destination
+            - name: connection
+              type: keyword
+              description: Landline, mobile, voip
+            - name: number_prefix
+              type: keyword
+              description: E.164 country code + three digits
+            - name: location
+              type: object
+              description: Lat/long for number prefix
+            - name: city
+              type: keyword
+              description: City name based on lat/long or IP address
+            - name: country_code
+              type: keyword
+              description: Two-letter ISO country code
+            - name: country_subdivision
+              type: keyword
+              description: Additional location details; e.g. California
+            - name: ip_address
+              type: ip
+              description: Public IP of Client user
+            - name: sdk
+              type: object
+              description: undefined
+          description: The called party
+        - name: processing_state
+          type: keyword
+          description: Represents the summarization state of the resource
+        - name: processing_version
+          type: integer
+          description: Increments as updates to the summary are made while processing_state is partial
+        - name: sip_edge
+          type: object
+          description: Contains metrics and properties for the Twilio media gateway of a SIP Interface or Trunking call
+        - name: carrier_edge
+          type: object
+          description: Contains metrics and properties for the Twilio media gateway of a PSTN call
+        - name: sdk_edge
+          type: object
+          description: Contains metrics and properties for the SDK sensor library for Client calls
+        - name: client_edge
+          type: object
+          description: Contains metrics and properties for the Twilio media gateway of a Client call
+        - name: tags
+          type: keyword
+          description: Tags applied to calls by Voice Insights analysis indicating a condition that could result in subjective degradation of the call quality
+        - name: attributes
+          type: object
+          description: Contains call-flow specific details
+        - name: properties
+          type: group
+          description: Contains edge-agnostic call-level details
+          fields:
+            - name: last_sip_response_num
+              type: integer
+              description: The numeric value of the last SIP response received for the call
+            - name: pdd_ms
+              type: integer
+              description: Post-dial delay in milliseconds
+            - name: queue_time
+              type: integer
+              description: Estimated time in milliseconds between when a Programmable Voice call is created and when the call actually begins.
+            - name: disconnected_by
+              type: keyword
+              description: Direction of the SIP BYE received at Twilio signaling gateway.
+            - name: direction
+              type: keyword
+              description: The direction of the call; inbound, outbound-api, outbound-dial, trunking-originating, trunking-terminating
+        - name: trust
+          type: group
+          description: Contains trusted communications details including Branded Call and verified caller ID
+          fields:
+            - name: verified_caller
+              type: group
+              description: Contains trusted communications details
+              fields:
+                - name: verified
+                  type: boolean
+                  description: Indicates if the caller ID provided has been verified; e.g. SHAKEN/STIR A attestation
+            - name: branded_call
+              type: group
+              description: Contains trusted communications details
+              fields:
+                - name: branded
+                  type: boolean
+                  description: Indicates if branding details were successfully displayed on the destination device
+                - name: caller
+                  type: keyword
+                  description: Caller ID provided
+                - name: use_case
+                  type: keyword
+                  description: Use case for the call
+                - name: branded_channel_sid
+                  type: keyword
+                  description: Branded channel SID
+                - name: brand_sid
+                  type: keyword
+                  description: Brand SID
+    - name: VoiceInsights.ConferenceSummary
+      type: group
+      description: Public conference summary event data
+      fields:
+        - name: conference_sid
+          type: keyword
+          description: The unique SID identifier of the Conference.
+        - name: account_sid
+          type: keyword
+          description: The unique SID identifier of the account.
+        - name: friendly_name
+          type: keyword
+          description: Custom label for the conference resource, up to 64 characters.
+        - name: start_time
+          type: date
+          description: Timestamp in ISO 8601 format when the conference started.
+        - name: create_time
+          type: date
+          description: Conference creation date and time in ISO 8601 format.
+        - name: end_time
+          type: date
+          description: Conference end date and time in ISO 8601 format.
+        - name: duration_seconds
+          type: integer
+          description: Conference duration in seconds.
+        - name: connect_duration_seconds
+          type: integer
+          description: Duration of the between conference start event and conference end event in seconds.
+        - name: status
+          type: keyword
+          description: Status of this Conference; `in_progress`, `not_started`, `completed` or `summary_timeout`. if Twilio don't receive `last_participant_left` event, summary will be timeout after 24 hours
+        - name: max_participants
+          type: integer
+          description: Max participants specified in config.
+        - name: max_concurrent_participants
+          type: integer
+          description: Actual maximum concurrent participants.
+        - name: unique_participants
+          type: integer
+          description: Unique conference participants based on caller ID.
+        - name: end_reason
+          type: keyword
+          description: Conference end reason; e.g. last participant left, modified by API, etc.
+        - name: ended_by
+          type: keyword
+          description: Call SID that ended the conference.
+        - name: recording_enabled
+          type: boolean
+          description: Boolean. Indicates whether recording was enabled.
+        - name: tags
+          type: keyword
+          description: Tags for detected conference conditions and participant behaviors.
+        - name: tag_info
+          type: object
+          description: undefined
+        - name: mixer_region
+          type: keyword
+          description: Twilio region where the conference media was mixed.
+        - name: mixer_region_requested
+          type: keyword
+          description: Twilio region where conference mixed was specified to be mixed in configuration.
+        - name: detected_issues
+          type: group
+          description: Issues detected during the conference
+          fields:
+            - name: call_quality
+              type: integer
+              description: The count of issue occured.
+            - name: region_configuration
+              type: integer
+              description: The count of issue occured.
+            - name: participant_behavior
+              type: integer
+              description: The count of issue occured.
+        - name: processing_state
+          type: keyword
+          description: Processing state for the Conference Summary resource.
+    - name: VoiceInsights.ConferenceParticipantSummary
+      type: group
+      description: Public conference participant summary event data
+      fields:
+        - name: participant_sid
+          type: keyword
+          description: The unique SID identifier of the participant.
+        - name: label
+          type: keyword
+          description: Custom label for the participant resource, up to 64 characters.
+        - name: conference_sid
+          type: keyword
+          description: The unique SID identifier of the Conference.
+        - name: call_sid
+          type: keyword
+          description: The unique SID identifier of the Call.
+        - name: account_sid
+          type: keyword
+          description: The unique SID identifier of the account.
+        - name: call_direction
+          type: keyword
+          description: Direction of media flow from the perspective of the edge. Inbound or outbound
+        - name: from
+          type: keyword
+          description: Call source.
+        - name: to
+          type: keyword
+          description: Call destination.
+        - name: call_state
+          type: keyword
+          description: Status of the call; completed, failed, etc.
+        - name: country_code
+          type: keyword
+          description: Country Code of Participant
+        - name: is_moderator
+          type: boolean
+          description: Is participant a moderator.
+        - name: join_time
+          type: date
+          description: ISO format time participant joined.
+        - name: leave_time
+          type: date
+          description: ISO format time participant left.
+        - name: duration_seconds
+          type: integer
+          description: Participant duration in seconds.
+        - name: whisper
+          type: keyword
+          description: The value of whisper
+        - name: agent_audio
+          type: boolean
+          description: The value of agent_audio
+        - name: outbound_queue_length
+          type: integer
+          description: Call position in the queue
+        - name: outbound_time_in_queue
+          type: integer
+          description: Time spent in queue before joining the conference
+        - name: jitter_buffer_size
+          type: keyword
+          description: Jitter buffer size for the connecting participant.
+        - name: is_coach
+          type: boolean
+          description: Is participant a coach
+        - name: coached_participants
+          type: keyword
+          description: Call sids coached by the participant
+        - name: participant_region
+          type: keyword
+          description: Region of the participant conference mixed
+        - name: conference_region
+          type: keyword
+          description: Region of the conference mixed.
+        - name: call_type
+          type: keyword
+          description: Type of call
+        - name: quality_issues
+          type: integer
+          description: Count of issues detected
+        - name: properties
+          type: group
+          description: Properties set at start of conference
+          fields:
+            - name: start_conference_on_enter
+              type: boolean
+              description: Boolean value set to start the conference when the participant joins the conference
+            - name: end_conference_on_exit
+              type: boolean
+              description: boolean value set to end the conference when the participant leave the conference
+            - name: play_early_media
+              type: boolean
+              description: boolean value set to allow an agent to hear the state of the outbound call, including ringing or disconnect messages.
+            - name: recording_enabled
+              type: boolean
+              description: boolean value set to allow recording of the conference
+            - name: trim_recording
+              type: boolean
+              description: boolean value set to trim leading and trailing silence from your recorded conference audio files.
+            - name: requested_region
+              type: keyword
+              description: Request region to mix the conference.
+            - name: enter_muted
+              type: boolean
+              description: Boolean value set to join participant as muted in the conference.
+            - name: beep_on_enter
+              type: boolean
+              description: Boolean value set to allow beep on enter of conference
+            - name: beep_on_exit
+              type: boolean
+              description: Boolean value set to allow beep on exist of conference
+        - name: events
+          type: group
+          description: Timestamp values of actions taken by participant
+          fields:
+            - name: hold
+              type: date
+              description: Unix timestamps when participant is on hold
+            - name: unhold
+              type: date
+              description: Unix timestamps when participant is on uhold
+            - name: mute
+              type: date
+              description: Unix timestamps when participant is on mute
+            - name: unmute
+              type: date
+              description: Unix timestamps when participant is unmuted.
+            - name: modify_beep
+              type: date
+              description: Unix timestamps when modify beep action occurs.
+            - name: modify_exit
+              type: date
+              description: Unix timestamps when modify exit action occurs.
+            - name: coaching
+              type: date
+              description: Unix timestamps when paticipant is coaching.
+            - name: coaching_stopped
+              type: date
+              description: Unix timestamp when paticipant stop coaching.
+            - name: modify_coached_participant
+              type: date
+              description: Unix timestamp when paticipant changed the participant to coach.
+        - name: metrics
+          type: object
+          description: undefined
+        - name: call_status
+          type: keyword
+          description: Staus of the call
+        - name: processing_state
+          type: keyword
+          description: Processing state for the Conference Summary resource.

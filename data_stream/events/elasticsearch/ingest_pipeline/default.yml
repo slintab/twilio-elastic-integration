@@ -1,0 +1,113 @@
+---
+description: Pipeline for processing Twilio events
+processors:
+  - append:
+      field: event.kind
+      value: event
+  - append:
+      field: event.type
+      value: info
+  - set:
+      field: event.action
+      copy_from: twilio.type
+      ignore_failure: true
+  - date:
+      field: twilio.time
+      target_field: '@timestamp'
+      ignore_failure: true
+      formats:
+        - ISO8601
+  - rename:
+      field: twilio.data
+      target_field: twilio.ErrorLogs.Error
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type == 'com.twilio.error-logs.error.logged'"
+  - set:
+      field: event.type
+      value: error
+      if: "ctx?.twilio?.Error?.level == 'ERROR'"
+      ignore_failure: true
+      ignore_empty_value: true
+  - rename:
+      field: twilio.data
+      target_field: twilio.EngagementIntelligence.TranscriptEvent
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type.startsWith('com.twilio.engagement-intelligence.transcript')"
+  - rename:
+      field: twilio.data
+      target_field: twilio.SuperSim.ConnectionEvent
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type.startsWith('com.twilio.iot.supersim.connection')"
+  - rename:
+      field: twilio.data
+      target_field: twilio.Messaging.InboundMessageV1
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type == 'com.twilio.messaging.inbound-message.received'"
+  - rename:
+      field: twilio.data
+      target_field: twilio.Messaging.MessageStatus
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type.startsWith('com.twilio.messaging.message')"
+  - rename:
+      field: twilio.data
+      target_field: twilio.Studio.FlowExecutionEvent
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type.startsWith('com.twilio.studio.flow.execution')"
+  - rename:
+      field: twilio.data
+      target_field: twilio.Studio.FlowStepEvent
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type == 'com.twilio.studio.flow.step.ended'"
+  - rename:
+      field: twilio.data
+      target_field: twilio.TaskRouter.WDSEvent
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type.startsWith('com.twilio.taskrouter')"
+  - rename:
+      field: twilio.data
+      target_field: twilio.VideoInsights.VideoLogAnalyzerParticipantSummary
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type == 'com.twilio.video.insights.log-analyzer.participant-summary'"
+  - rename:
+      field: twilio.data
+      target_field: twilio.VideoInsights.VideoLogAnalyzerRoomSummary
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type == 'com.twilio.video.insights.log-analyzer.room-summary'"
+  - rename:
+      field: twilio.data
+      target_field: twilio.VoiceInsights.CallEvent
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type.startsWith('com.twilio.voice.insights.call-event')"
+  - rename:
+      field: twilio.data
+      target_field: twilio.VoiceInsights.CallSummary
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type.startsWith('com.twilio.voice.insights.call-summary')"
+  - rename:
+      field: twilio.data
+      target_field: twilio.VoiceInsights.ConferenceSummary
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type.startsWith('com.twilio.voice.insights.conference-summary')"
+  - rename:
+      field: twilio.data
+      target_field: twilio.VoiceInsights.ConferenceParticipantSummary
+      ignore_missing: true
+      ignore_failure: true
+      if: "ctx?.twilio?.type.startsWith('com.twilio.voice.insights.conference-participant-summary')"
+on_failure:
+  - set:
+      field: error.message
+      value: '{{ _ingest.on_failure_message }}'

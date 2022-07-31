@@ -1,0 +1,726 @@
+{
+    "attributes": {
+        "description": "",
+        "hits": 0,
+        "kibanaSavedObjectMeta": {
+            "searchSourceJSON": {
+                "filter": [],
+                "query": {
+                    "language": "kuery",
+                    "query": ""
+                }
+            }
+        },
+        "optionsJSON": {
+            "hidePanelTitles": false,
+            "syncColors": false,
+            "syncTooltips": false,
+            "useMargins": true
+        },
+        "panelsJSON": [
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+                                "name": "indexpattern-datasource-layer-54afcc98-03de-417c-8916-64cc674d9d0f",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+                                "name": "51116360-51fd-466f-9430-f58d87499653",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "54afcc98-03de-417c-8916-64cc674d9d0f": {
+                                            "columnOrder": [
+                                                "4ccd9ad5-205d-44c7-8b73-cca82b2c12e2"
+                                            ],
+                                            "columns": {
+                                                "4ccd9ad5-205d-44c7-8b73-cca82b2c12e2": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "twilio.Messaging.MessageStatus.messageStatus : \"SENT\" "
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Messages sent",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true,
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": "twilio.Messaging.MessageStatus.messageStatus : \"SENT\" ",
+                                        "disabled": false,
+                                        "index": "51116360-51fd-466f-9430-f58d87499653",
+                                        "key": "query",
+                                        "negate": false,
+                                        "type": "custom",
+                                        "value": "{\"bool\":{\"must\":[],\"filter\":[{\"bool\":{\"should\":[{\"match_phrase\":{\"twilio.Messaging.MessageStatus.messageStatus\":\"SENT\"}}],\"minimum_should_match\":1}}],\"should\":[],\"must_not\":[]}}"
+                                    },
+                                    "query": {
+                                        "bool": {
+                                            "filter": [
+                                                {
+                                                    "bool": {
+                                                        "minimum_should_match": 1,
+                                                        "should": [
+                                                            {
+                                                                "match_phrase": {
+                                                                    "twilio.Messaging.MessageStatus.messageStatus": "SENT"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "must": [],
+                                            "must_not": [],
+                                            "should": []
+                                        }
+                                    }
+                                }
+                            ],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "accessor": "4ccd9ad5-205d-44c7-8b73-cca82b2c12e2",
+                                "colorMode": "None",
+                                "layerId": "54afcc98-03de-417c-8916-64cc674d9d0f",
+                                "layerType": "data",
+                                "size": "xl",
+                                "textAlign": "center",
+                                "titlePosition": "top"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {}
+                },
+                "gridData": {
+                    "h": 10,
+                    "i": "9306767e-33d8-44b5-a928-25fa8c976c6a",
+                    "w": 10,
+                    "x": 0,
+                    "y": 0
+                },
+                "panelIndex": "9306767e-33d8-44b5-a928-25fa8c976c6a",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+                                "name": "indexpattern-datasource-layer-7d08c5ba-b598-4187-8305-850a3b888573",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "7d08c5ba-b598-4187-8305-850a3b888573": {
+                                            "columnOrder": [
+                                                "a665f0ea-d880-4686-b338-4f5ebc847011",
+                                                "888159b9-5422-4b6a-8167-6710fbd6b3f4",
+                                                "854725dc-03bb-4775-aa1c-5cf82d87e7b0"
+                                            ],
+                                            "columns": {
+                                                "854725dc-03bb-4775-aa1c-5cf82d87e7b0": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of messages",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "888159b9-5422-4b6a-8167-6710fbd6b3f4": {
+                                                    "customLabel": true,
+                                                    "dataType": "date",
+                                                    "isBucketed": true,
+                                                    "label": "Date",
+                                                    "operationType": "date_histogram",
+                                                    "params": {
+                                                        "dropPartials": false,
+                                                        "includeEmptyRows": true,
+                                                        "interval": "d"
+                                                    },
+                                                    "scale": "interval",
+                                                    "sourceField": "@timestamp"
+                                                },
+                                                "a665f0ea-d880-4686-b338-4f5ebc847011": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 5 values of twilio.Messaging.MessageStatus.messageStatus",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "854725dc-03bb-4775-aa1c-5cf82d87e7b0",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "twilio.Messaging.MessageStatus.messageStatus"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "axisTitlesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "curveType": "LINEAR",
+                                "emphasizeFitting": true,
+                                "fittingFunction": "Zero",
+                                "gridlinesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "labelsOrientation": {
+                                    "x": 0,
+                                    "yLeft": 0,
+                                    "yRight": 0
+                                },
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "854725dc-03bb-4775-aa1c-5cf82d87e7b0"
+                                        ],
+                                        "layerId": "7d08c5ba-b598-4187-8305-850a3b888573",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "line",
+                                        "showGridlines": false,
+                                        "splitAccessor": "a665f0ea-d880-4686-b338-4f5ebc847011",
+                                        "xAccessor": "888159b9-5422-4b6a-8167-6710fbd6b3f4"
+                                    }
+                                ],
+                                "legend": {
+                                    "isInside": false,
+                                    "isVisible": true,
+                                    "legendSize": "large",
+                                    "position": "right",
+                                    "showSingleSeries": true
+                                },
+                                "preferredSeriesType": "line",
+                                "tickLabelsVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "valueLabels": "hide"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 10,
+                    "i": "03f82a2c-3663-40c7-8d09-ea197e7d21bd",
+                    "w": 38,
+                    "x": 10,
+                    "y": 0
+                },
+                "panelIndex": "03f82a2c-3663-40c7-8d09-ea197e7d21bd",
+                "title": "Messages sent by status over time",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+                                "name": "indexpattern-datasource-layer-ec16fa62-1d00-4253-a0bd-8850edc194e1",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+                                "name": "9b6ea62c-6c88-45fb-8884-b3d5e5723a02",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "ec16fa62-1d00-4253-a0bd-8850edc194e1": {
+                                            "columnOrder": [
+                                                "4c1154ab-9454-4a3b-89a6-63885a3346fc"
+                                            ],
+                                            "columns": {
+                                                "4c1154ab-9454-4a3b-89a6-63885a3346fc": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "twilio.Messaging.MessageStatus.messageStatus :\"UNDELIVERED\" "
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Undelivered messages",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": "twilio.Messaging.MessageStatus.messageStatus :\"UNDELIVERED\" ",
+                                        "disabled": false,
+                                        "index": "9b6ea62c-6c88-45fb-8884-b3d5e5723a02",
+                                        "key": "query",
+                                        "negate": false,
+                                        "type": "custom",
+                                        "value": "{\"bool\":{\"must\":[],\"filter\":[{\"bool\":{\"should\":[{\"match_phrase\":{\"twilio.Messaging.MessageStatus.messageStatus\":\"UNDELIVERED\"}}],\"minimum_should_match\":1}}],\"should\":[],\"must_not\":[]}}"
+                                    },
+                                    "query": {
+                                        "bool": {
+                                            "filter": [
+                                                {
+                                                    "bool": {
+                                                        "minimum_should_match": 1,
+                                                        "should": [
+                                                            {
+                                                                "match_phrase": {
+                                                                    "twilio.Messaging.MessageStatus.messageStatus": "UNDELIVERED"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "must": [],
+                                            "must_not": [],
+                                            "should": []
+                                        }
+                                    }
+                                }
+                            ],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "accessor": "4c1154ab-9454-4a3b-89a6-63885a3346fc",
+                                "layerId": "ec16fa62-1d00-4253-a0bd-8850edc194e1",
+                                "layerType": "data",
+                                "size": "xl",
+                                "textAlign": "center",
+                                "titlePosition": "bottom"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {}
+                },
+                "gridData": {
+                    "h": 11,
+                    "i": "45ad4dad-88db-4746-a491-9401a74d1baf",
+                    "w": 10,
+                    "x": 0,
+                    "y": 10
+                },
+                "panelIndex": "45ad4dad-88db-4746-a491-9401a74d1baf",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+                                "name": "indexpattern-datasource-layer-8233aa5b-1077-4cd9-b50e-3860f40cd899",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "8233aa5b-1077-4cd9-b50e-3860f40cd899": {
+                                            "columnOrder": [
+                                                "f5fc6711-bee5-473f-9ff7-0aa9a9b7cefc",
+                                                "76e648d0-62b2-4d00-9742-c611e24a6a6d"
+                                            ],
+                                            "columns": {
+                                                "76e648d0-62b2-4d00-9742-c611e24a6a6d": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "event.action : \"com.twilio.messaging.inbound-message.received\" "
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Count of messages",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "f5fc6711-bee5-473f-9ff7-0aa9a9b7cefc": {
+                                                    "customLabel": true,
+                                                    "dataType": "date",
+                                                    "isBucketed": true,
+                                                    "label": "Date",
+                                                    "operationType": "date_histogram",
+                                                    "params": {
+                                                        "dropPartials": false,
+                                                        "includeEmptyRows": true,
+                                                        "interval": "d"
+                                                    },
+                                                    "scale": "interval",
+                                                    "sourceField": "@timestamp"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "axisTitlesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "emphasizeFitting": true,
+                                "fittingFunction": "Zero",
+                                "gridlinesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "labelsOrientation": {
+                                    "x": 0,
+                                    "yLeft": 0,
+                                    "yRight": 0
+                                },
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "76e648d0-62b2-4d00-9742-c611e24a6a6d"
+                                        ],
+                                        "layerId": "8233aa5b-1077-4cd9-b50e-3860f40cd899",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "line",
+                                        "showGridlines": false,
+                                        "xAccessor": "f5fc6711-bee5-473f-9ff7-0aa9a9b7cefc"
+                                    }
+                                ],
+                                "legend": {
+                                    "isVisible": true,
+                                    "position": "right"
+                                },
+                                "preferredSeriesType": "line",
+                                "tickLabelsVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "valueLabels": "hide"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 11,
+                    "i": "1d2b22fe-abb1-40aa-89c7-b893c42c61ad",
+                    "w": 15,
+                    "x": 10,
+                    "y": 10
+                },
+                "panelIndex": "1d2b22fe-abb1-40aa-89c7-b893c42c61ad",
+                "title": "Inbound messages",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+                                "name": "indexpattern-datasource-layer-ae893b62-34f3-4080-9d45-ec332827a524",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "ae893b62-34f3-4080-9d45-ec332827a524": {
+                                            "columnOrder": [
+                                                "ec48a654-be1c-4352-bcaf-1711430a1696",
+                                                "b42e185d-a781-4036-8f4c-3b78be32ad11"
+                                            ],
+                                            "columns": {
+                                                "b42e185d-a781-4036-8f4c-3b78be32ad11": {
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of records",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "ec48a654-be1c-4352-bcaf-1711430a1696": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": true,
+                                                    "label": "Error codes",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "b42e185d-a781-4036-8f4c-3b78be32ad11",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": false,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 10
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "twilio.Messaging.MessageStatus.errorCode"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "axisTitlesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "fittingFunction": "None",
+                                "gridlinesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "labelsOrientation": {
+                                    "x": -45,
+                                    "yLeft": 0,
+                                    "yRight": 0
+                                },
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "b42e185d-a781-4036-8f4c-3b78be32ad11"
+                                        ],
+                                        "layerId": "ae893b62-34f3-4080-9d45-ec332827a524",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "bar",
+                                        "showGridlines": false,
+                                        "xAccessor": "ec48a654-be1c-4352-bcaf-1711430a1696",
+                                        "yConfig": [
+                                            {
+                                                "color": "#d6bf57",
+                                                "forAccessor": "b42e185d-a781-4036-8f4c-3b78be32ad11"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "legend": {
+                                    "isVisible": true,
+                                    "position": "right"
+                                },
+                                "preferredSeriesType": "bar_stacked",
+                                "tickLabelsVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "valueLabels": "hide"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 11,
+                    "i": "2f329014-fdc1-4359-9527-bad3de7072e9",
+                    "w": 23,
+                    "x": 25,
+                    "y": 10
+                },
+                "panelIndex": "2f329014-fdc1-4359-9527-bad3de7072e9",
+                "title": "Top error codes",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "enhancements": {}
+                },
+                "gridData": {
+                    "h": 15,
+                    "i": "6586ee7a-13b2-4fb7-8603-343f2c28175b",
+                    "w": 48,
+                    "x": 0,
+                    "y": 21
+                },
+                "panelIndex": "6586ee7a-13b2-4fb7-8603-343f2c28175b",
+                "panelRefName": "panel_6586ee7a-13b2-4fb7-8603-343f2c28175b",
+                "type": "search",
+                "version": "8.3.2"
+            }
+        ],
+        "timeRestore": false,
+        "title": "Messaging Dashboard",
+        "version": 1
+    },
+    "coreMigrationVersion": "8.3.2",
+    "id": "twilio-2ee76e50-10fe-11ed-b22f-13e74b0eac84",
+    "migrationVersion": {
+        "dashboard": "8.3.0"
+    },
+    "references": [
+        {
+            "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+            "name": "9306767e-33d8-44b5-a928-25fa8c976c6a:indexpattern-datasource-layer-54afcc98-03de-417c-8916-64cc674d9d0f",
+            "type": "index-pattern"
+        },
+        {
+            "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+            "name": "9306767e-33d8-44b5-a928-25fa8c976c6a:51116360-51fd-466f-9430-f58d87499653",
+            "type": "index-pattern"
+        },
+        {
+            "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+            "name": "03f82a2c-3663-40c7-8d09-ea197e7d21bd:indexpattern-datasource-layer-7d08c5ba-b598-4187-8305-850a3b888573",
+            "type": "index-pattern"
+        },
+        {
+            "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+            "name": "45ad4dad-88db-4746-a491-9401a74d1baf:indexpattern-datasource-layer-ec16fa62-1d00-4253-a0bd-8850edc194e1",
+            "type": "index-pattern"
+        },
+        {
+            "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+            "name": "45ad4dad-88db-4746-a491-9401a74d1baf:9b6ea62c-6c88-45fb-8884-b3d5e5723a02",
+            "type": "index-pattern"
+        },
+        {
+            "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+            "name": "1d2b22fe-abb1-40aa-89c7-b893c42c61ad:indexpattern-datasource-layer-8233aa5b-1077-4cd9-b50e-3860f40cd899",
+            "type": "index-pattern"
+        },
+        {
+            "id": "28b8ffe0-10f8-11ed-b22f-13e74b0eac84",
+            "name": "2f329014-fdc1-4359-9527-bad3de7072e9:indexpattern-datasource-layer-ae893b62-34f3-4080-9d45-ec332827a524",
+            "type": "index-pattern"
+        },
+        {
+            "id": "twilio-d08621f0-110a-11ed-b22f-13e74b0eac84",
+            "name": "6586ee7a-13b2-4fb7-8603-343f2c28175b:panel_6586ee7a-13b2-4fb7-8603-343f2c28175b",
+            "type": "search"
+        }
+    ],
+    "type": "dashboard"
+}

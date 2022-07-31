@@ -1,0 +1,183 @@
+{
+    "_index": ".ds-logs-twilio.events-default-2022.07.30-000001",
+    "_id": "dnxlVIIBgeK1Ltnux3Gc",
+    "_version": 1,
+    "_score": 0,
+    "_source": {
+        "agent": {
+            "name": "docker-fleet-agent",
+            "id": "db4ad615-71f8-4ee2-b05d-ce6a0a4e29df",
+            "type": "filebeat",
+            "ephemeral_id": "1fde8209-1a96-4e31-9642-14e5711b0833",
+            "version": "8.3.2"
+        },
+        "elastic_agent": {
+            "id": "db4ad615-71f8-4ee2-b05d-ce6a0a4e29df",
+            "version": "8.3.2",
+            "snapshot": false
+        },
+        "tags": [
+            "twilio-event",
+            "forwarded"
+        ],
+        "input": {
+            "type": "http_endpoint"
+        },
+        "@timestamp": "2022-07-31T13:15:00.707Z",
+        "ecs": {
+            "version": "8.0.0"
+        },
+        "data_stream": {
+            "namespace": "default",
+            "type": "logs",
+            "dataset": "twilio.events"
+        },
+        "twilio": {
+            "Messaging": {
+                "MessageStatus": {
+                    "messageStatus": "SENT",
+                    "apiVersion": "2010-04-01",
+                    "eventName": "com.twilio.messaging.message.sent",
+                    "from": "+441234567890",
+                    "to": "+440987654321",
+                    "accountSid": "AC12345678900987654321",
+                    "messageSid": "SM12345678900987654321",
+                    "timestamp": "2022-07-31T13:15:00.707Z"
+                }
+            },
+            "datacontenttype": "application/json",
+            "specversion": "1.0",
+            "source": "/2010-04-01/Accounts/AC12345678900987654321/Messages/SM12345678900987654321.json",
+            "id": "EZ1234567890987654321",
+            "time": "2022-07-31T13:15:00.707Z",
+            "type": "com.twilio.messaging.message.sent",
+            "dataschema": "https://events-schemas.twilio.com/Messaging.MessageStatus/3"
+        },
+        "event": {
+            "agent_id_status": "verified",
+            "ingested": "2022-07-31T13:15:32Z",
+            "kind": [
+                "event"
+            ],
+            "action": "com.twilio.messaging.message.sent",
+            "type": [
+                "info"
+            ],
+            "dataset": "twilio.events"
+        }
+    },
+    "fields": {
+        "twilio.time": [
+            "2022-07-31T13:15:00.707Z"
+        ],
+        "elastic_agent.version": [
+            "8.3.2"
+        ],
+        "twilio.Messaging.MessageStatus.eventName": [
+            "com.twilio.messaging.message.sent"
+        ],
+        "agent.type": [
+            "filebeat"
+        ],
+        "twilio.Messaging.MessageStatus.messageSid": [
+            "SM12345678900987654321"
+        ],
+        "twilio.specversion": [
+            "1.0"
+        ],
+        "event.module": [
+            "twilio"
+        ],
+        "twilio.datacontenttype": [
+            "application/json"
+        ],
+        "twilio.Messaging.MessageStatus.accountSid": [
+            "AC12345678900987654321"
+        ],
+        "twilio.Messaging.MessageStatus.messageStatus": [
+            "SENT"
+        ],
+        "twilio.dataschema": [
+            "https://events-schemas.twilio.com/Messaging.MessageStatus/3"
+        ],
+        "agent.name": [
+            "docker-fleet-agent"
+        ],
+        "elastic_agent.snapshot": [
+            false
+        ],
+        "event.agent_id_status": [
+            "verified"
+        ],
+        "event.kind": [
+            "event"
+        ],
+        "twilio.id": [
+            "EZf4688ba7bbbd5f8421c13b23b2cc6bcb"
+        ],
+        "twilio.source": [
+            "/2010-04-01/Accounts/AC12345678900987654321/Messages/SM12345678900987654321.json"
+        ],
+        "twilio.Messaging.MessageStatus.to": [
+            "+440987654321"
+        ],
+        "elastic_agent.id": [
+            "db4ad615-71f8-4ee2-b05d-ce6a0a4e29df"
+        ],
+        "data_stream.namespace": [
+            "default"
+        ],
+        "input.type": [
+            "http_endpoint"
+        ],
+        "twilio.Messaging.MessageStatus.from": [
+            "+441234567890"
+        ],
+        "twilio.Messaging.MessageStatus.apiVersion": [
+            "2010-04-01"
+        ],
+        "data_stream.type": [
+            "logs"
+        ],
+        "tags": [
+            "twilio-event",
+            "forwarded"
+        ],
+        "twilio.Messaging.MessageStatus.timestamp": [
+            "2022-07-31T13:15:00.707Z"
+        ],
+        "twilio.type": [
+            "com.twilio.messaging.message.sent"
+        ],
+        "event.action": [
+            "com.twilio.messaging.message.sent"
+        ],
+        "event.ingested": [
+            "2022-07-31T13:15:32.000Z"
+        ],
+        "@timestamp": [
+            "2022-07-31T13:15:00.707Z"
+        ],
+        "agent.id": [
+            "db4ad615-71f8-4ee2-b05d-ce6a0a4e29df"
+        ],
+        "ecs.version": [
+            "8.0.0"
+        ],
+        "event.type": [
+            "info"
+        ],
+        "data_stream.dataset": [
+            "twilio.events"
+        ],
+        "agent.ephemeral_id": [
+            "1fde8209-1a96-4e31-9642-14e5711b0833"
+        ],
+        "agent.version": [
+            "8.3.2"
+        ],
+        "event.dataset": [
+            "twilio.events"
+        ]
+    }
+}
