@@ -867,7 +867,7 @@
               type: keyword
               description: Additional location details; e.g. California
             - name: ip_address
-              type: ip
+              type: keyword
               description: Public IP of Client user
             - name: sdk
               type: object
@@ -904,7 +904,7 @@
               type: keyword
               description: Additional location details; e.g. California
             - name: ip_address
-              type: ip
+              type: keyword
               description: Public IP of Client user
             - name: sdk
               type: object
