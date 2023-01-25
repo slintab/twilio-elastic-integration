@@ -1,0 +1,1543 @@
+{
+    "attributes": {
+        "description": "",
+        "hits": 0,
+        "kibanaSavedObjectMeta": {
+            "searchSourceJSON": {
+                "filter": [],
+                "query": {
+                    "language": "kuery",
+                    "query": ""
+                }
+            }
+        },
+        "optionsJSON": {
+            "hidePanelTitles": false,
+            "syncColors": false,
+            "syncTooltips": false,
+            "useMargins": true
+        },
+        "panelsJSON": [
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-35657619-d457-4ce9-97ff-fd0a8e597203",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "ab45a0a8-02d7-4422-91fa-33a892664da9",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "35657619-d457-4ce9-97ff-fd0a8e597203": {
+                                            "columnOrder": [
+                                                "56f238ca-c1af-419a-9c64-f471cdc25977"
+                                            ],
+                                            "columns": {
+                                                "56f238ca-c1af-419a-9c64-f471cdc25977": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "event.action : \"com.twilio.voice.insights.call-summary.complete\" and @timestamp \u003c= now/d and @timestamp \u003e= now-1h"
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Calls this hour",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": "event.action : \"com.twilio.voice.insights.call-summary.complete\" ",
+                                        "disabled": false,
+                                        "index": "ab45a0a8-02d7-4422-91fa-33a892664da9",
+                                        "key": "query",
+                                        "negate": false,
+                                        "type": "custom",
+                                        "value": "{\"bool\":{\"must\":[],\"filter\":[{\"bool\":{\"should\":[{\"match_phrase\":{\"event.action\":\"com.twilio.voice.insights.call-summary.complete\"}}],\"minimum_should_match\":1}}],\"should\":[],\"must_not\":[]}}"
+                                    },
+                                    "query": {
+                                        "bool": {
+                                            "filter": [
+                                                {
+                                                    "bool": {
+                                                        "minimum_should_match": 1,
+                                                        "should": [
+                                                            {
+                                                                "match_phrase": {
+                                                                    "event.action": "com.twilio.voice.insights.call-summary.complete"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "must": [],
+                                            "must_not": [],
+                                            "should": []
+                                        }
+                                    }
+                                }
+                            ],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "accessor": "56f238ca-c1af-419a-9c64-f471cdc25977",
+                                "layerId": "35657619-d457-4ce9-97ff-fd0a8e597203",
+                                "layerType": "data",
+                                "textAlign": "center"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": true
+                },
+                "gridData": {
+                    "h": 7,
+                    "i": "2419230f-3a48-4ea3-940a-63a1275bbfbc",
+                    "w": 12,
+                    "x": 0,
+                    "y": 0
+                },
+                "panelIndex": "2419230f-3a48-4ea3-940a-63a1275bbfbc",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-35657619-d457-4ce9-97ff-fd0a8e597203",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "14ed5fda-93cb-4f65-855e-049a2aed7c76",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "35657619-d457-4ce9-97ff-fd0a8e597203": {
+                                            "columnOrder": [
+                                                "56f238ca-c1af-419a-9c64-f471cdc25977"
+                                            ],
+                                            "columns": {
+                                                "56f238ca-c1af-419a-9c64-f471cdc25977": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "event.action : \"com.twilio.voice.insights.call-summary.complete\" and @timestamp \u003c= now/d and @timestamp \u003e= now-1d"
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Calls today",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": "event.action : \"com.twilio.voice.insights.call-summary.complete\" ",
+                                        "disabled": false,
+                                        "index": "14ed5fda-93cb-4f65-855e-049a2aed7c76",
+                                        "key": "query",
+                                        "negate": false,
+                                        "type": "custom",
+                                        "value": "{\"bool\":{\"must\":[],\"filter\":[{\"bool\":{\"should\":[{\"match_phrase\":{\"event.action\":\"com.twilio.voice.insights.call-summary.complete\"}}],\"minimum_should_match\":1}}],\"should\":[],\"must_not\":[]}}"
+                                    },
+                                    "query": {
+                                        "bool": {
+                                            "filter": [
+                                                {
+                                                    "bool": {
+                                                        "minimum_should_match": 1,
+                                                        "should": [
+                                                            {
+                                                                "match_phrase": {
+                                                                    "event.action": "com.twilio.voice.insights.call-summary.complete"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "must": [],
+                                            "must_not": [],
+                                            "should": []
+                                        }
+                                    }
+                                }
+                            ],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "accessor": "56f238ca-c1af-419a-9c64-f471cdc25977",
+                                "layerId": "35657619-d457-4ce9-97ff-fd0a8e597203",
+                                "layerType": "data",
+                                "textAlign": "center"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": true
+                },
+                "gridData": {
+                    "h": 7,
+                    "i": "b738ed30-eebb-4dfa-b983-e84cc21e1fd1",
+                    "w": 12,
+                    "x": 12,
+                    "y": 0
+                },
+                "panelIndex": "b738ed30-eebb-4dfa-b983-e84cc21e1fd1",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-35657619-d457-4ce9-97ff-fd0a8e597203",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "c4edf3eb-ff07-42f8-a89f-2f0b2217eba4",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "7f742ffb-8570-448e-ab6e-c5207b68210a",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "35657619-d457-4ce9-97ff-fd0a8e597203": {
+                                            "columnOrder": [
+                                                "56f238ca-c1af-419a-9c64-f471cdc25977"
+                                            ],
+                                            "columns": {
+                                                "56f238ca-c1af-419a-9c64-f471cdc25977": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "event.action : \"com.twilio.voice.insights.call-summary.complete\" and @timestamp \u003c= now/d and @timestamp \u003e= now-7d"
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Calls this week",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": "event.action : \"com.twilio.voice.insights.call-summary.complete\" ",
+                                        "disabled": false,
+                                        "index": "c4edf3eb-ff07-42f8-a89f-2f0b2217eba4",
+                                        "key": "query",
+                                        "negate": false,
+                                        "type": "custom",
+                                        "value": "{\"bool\":{\"must\":[],\"filter\":[{\"bool\":{\"should\":[{\"match_phrase\":{\"event.action\":\"com.twilio.voice.insights.call-summary.complete\"}}],\"minimum_should_match\":1}}],\"should\":[],\"must_not\":[]}}"
+                                    },
+                                    "query": {
+                                        "bool": {
+                                            "filter": [
+                                                {
+                                                    "bool": {
+                                                        "minimum_should_match": 1,
+                                                        "should": [
+                                                            {
+                                                                "match_phrase": {
+                                                                    "event.action": "com.twilio.voice.insights.call-summary.complete"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "must": [],
+                                            "must_not": [],
+                                            "should": []
+                                        }
+                                    }
+                                },
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": "event.action : \"com.twilio.voice.insights.call-summary.complete\" and @timestamp \u003c= now/d and @timestamp \u003e= now-7d/d",
+                                        "disabled": false,
+                                        "index": "7f742ffb-8570-448e-ab6e-c5207b68210a",
+                                        "key": "query",
+                                        "negate": false,
+                                        "type": "custom",
+                                        "value": "{\"bool\":{\"must\":[],\"filter\":[{\"bool\":{\"filter\":[{\"bool\":{\"should\":[{\"match_phrase\":{\"event.action\":\"com.twilio.voice.insights.call-summary.complete\"}}],\"minimum_should_match\":1}},{\"bool\":{\"should\":[{\"range\":{\"@timestamp\":{\"lte\":\"now/d\",\"time_zone\":\"Europe/London\"}}}],\"minimum_should_match\":1}},{\"bool\":{\"should\":[{\"range\":{\"@timestamp\":{\"gte\":\"now-7d/d\",\"time_zone\":\"Europe/London\"}}}],\"minimum_should_match\":1}}]}}],\"should\":[],\"must_not\":[]}}"
+                                    },
+                                    "query": {
+                                        "bool": {
+                                            "filter": [
+                                                {
+                                                    "bool": {
+                                                        "filter": [
+                                                            {
+                                                                "bool": {
+                                                                    "minimum_should_match": 1,
+                                                                    "should": [
+                                                                        {
+                                                                            "match_phrase": {
+                                                                                "event.action": "com.twilio.voice.insights.call-summary.complete"
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "bool": {
+                                                                    "minimum_should_match": 1,
+                                                                    "should": [
+                                                                        {
+                                                                            "range": {
+                                                                                "@timestamp": {
+                                                                                    "lte": "now/d",
+                                                                                    "time_zone": "Europe/London"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "bool": {
+                                                                    "minimum_should_match": 1,
+                                                                    "should": [
+                                                                        {
+                                                                            "range": {
+                                                                                "@timestamp": {
+                                                                                    "gte": "now-7d/d",
+                                                                                    "time_zone": "Europe/London"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "must": [],
+                                            "must_not": [],
+                                            "should": []
+                                        }
+                                    }
+                                }
+                            ],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "accessor": "56f238ca-c1af-419a-9c64-f471cdc25977",
+                                "layerId": "35657619-d457-4ce9-97ff-fd0a8e597203",
+                                "layerType": "data",
+                                "textAlign": "center"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": true
+                },
+                "gridData": {
+                    "h": 7,
+                    "i": "9a956b0c-0321-4201-b088-51ebb087e190",
+                    "w": 12,
+                    "x": 24,
+                    "y": 0
+                },
+                "panelIndex": "9a956b0c-0321-4201-b088-51ebb087e190",
+                "title": "",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-35657619-d457-4ce9-97ff-fd0a8e597203",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "6d71e59b-2a45-45b8-8c3b-c6f4aedf220a",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "35657619-d457-4ce9-97ff-fd0a8e597203": {
+                                            "columnOrder": [
+                                                "56f238ca-c1af-419a-9c64-f471cdc25977"
+                                            ],
+                                            "columns": {
+                                                "56f238ca-c1af-419a-9c64-f471cdc25977": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "event.action : \"com.twilio.voice.insights.call-summary.complete\" and @timestamp \u003c= now/d and @timestamp \u003e= now-30d"
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Calls this month",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": "event.action : \"com.twilio.voice.insights.call-summary.complete\" ",
+                                        "disabled": false,
+                                        "index": "6d71e59b-2a45-45b8-8c3b-c6f4aedf220a",
+                                        "key": "query",
+                                        "negate": false,
+                                        "type": "custom",
+                                        "value": "{\"bool\":{\"must\":[],\"filter\":[{\"bool\":{\"should\":[{\"match_phrase\":{\"event.action\":\"com.twilio.voice.insights.call-summary.complete\"}}],\"minimum_should_match\":1}}],\"should\":[],\"must_not\":[]}}"
+                                    },
+                                    "query": {
+                                        "bool": {
+                                            "filter": [
+                                                {
+                                                    "bool": {
+                                                        "minimum_should_match": 1,
+                                                        "should": [
+                                                            {
+                                                                "match_phrase": {
+                                                                    "event.action": "com.twilio.voice.insights.call-summary.complete"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "must": [],
+                                            "must_not": [],
+                                            "should": []
+                                        }
+                                    }
+                                }
+                            ],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "accessor": "56f238ca-c1af-419a-9c64-f471cdc25977",
+                                "layerId": "35657619-d457-4ce9-97ff-fd0a8e597203",
+                                "layerType": "data",
+                                "textAlign": "center"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": true
+                },
+                "gridData": {
+                    "h": 7,
+                    "i": "ec43d8d5-5892-40a8-9be6-a23b46d6f2f5",
+                    "w": 12,
+                    "x": 36,
+                    "y": 0
+                },
+                "panelIndex": "ec43d8d5-5892-40a8-9be6-a23b46d6f2f5",
+                "title": "",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-98e7228c-a0f5-48fc-b86b-66b8caadd215",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "98e7228c-a0f5-48fc-b86b-66b8caadd215": {
+                                            "columnOrder": [
+                                                "11e7d53b-f892-48b7-8f62-257b9f4f9adc",
+                                                "a3c86b51-84bd-49e3-a3a3-a65eabcce559",
+                                                "b168bd33-b75a-4b3f-81cc-a2ea00c11953"
+                                            ],
+                                            "columns": {
+                                                "11e7d53b-f892-48b7-8f62-257b9f4f9adc": {
+                                                    "customLabel": true,
+                                                    "dataType": "date",
+                                                    "isBucketed": true,
+                                                    "label": "Calls",
+                                                    "operationType": "date_histogram",
+                                                    "params": {
+                                                        "dropPartials": false,
+                                                        "includeEmptyRows": true,
+                                                        "interval": "d"
+                                                    },
+                                                    "scale": "interval",
+                                                    "sourceField": "@timestamp"
+                                                },
+                                                "a3c86b51-84bd-49e3-a3a3-a65eabcce559": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 10 values of twilio.VoiceInsights.CallSummary.properties.direction",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "b168bd33-b75a-4b3f-81cc-a2ea00c11953",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 10
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "twilio.VoiceInsights.CallSummary.properties.direction"
+                                                },
+                                                "b168bd33-b75a-4b3f-81cc-a2ea00c11953": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "event.action :\"com.twilio.voice.insights.call-summary.complete\" "
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Count of calls",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "axisTitlesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "fittingFunction": "None",
+                                "gridlinesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "labelsOrientation": {
+                                    "x": 0,
+                                    "yLeft": 0,
+                                    "yRight": 0
+                                },
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "b168bd33-b75a-4b3f-81cc-a2ea00c11953"
+                                        ],
+                                        "layerId": "98e7228c-a0f5-48fc-b86b-66b8caadd215",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "bar_stacked",
+                                        "showGridlines": false,
+                                        "splitAccessor": "a3c86b51-84bd-49e3-a3a3-a65eabcce559",
+                                        "xAccessor": "11e7d53b-f892-48b7-8f62-257b9f4f9adc"
+                                    }
+                                ],
+                                "legend": {
+                                    "horizontalAlignment": "right",
+                                    "isInside": false,
+                                    "isVisible": true,
+                                    "position": "right",
+                                    "shouldTruncate": false,
+                                    "showSingleSeries": true,
+                                    "verticalAlignment": "bottom"
+                                },
+                                "preferredSeriesType": "bar_stacked",
+                                "tickLabelsVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "valueLabels": "hide",
+                                "valuesInLegend": false
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 15,
+                    "i": "e962e903-38df-401a-a1af-37b436288882",
+                    "w": 24,
+                    "x": 0,
+                    "y": 7
+                },
+                "panelIndex": "e962e903-38df-401a-a1af-37b436288882",
+                "title": "Call frequency",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-bb8b5861-6f81-47b0-a87e-434f97d59fa0",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "bb8b5861-6f81-47b0-a87e-434f97d59fa0": {
+                                            "columnOrder": [
+                                                "1d25c245-bafe-44ff-8b3b-17c4b387b4ae",
+                                                "4989517a-f121-4e44-9256-dfe43e87cdc5",
+                                                "4989517a-f121-4e44-9256-dfe43e87cdc5X0"
+                                            ],
+                                            "columns": {
+                                                "1d25c245-bafe-44ff-8b3b-17c4b387b4ae": {
+                                                    "customLabel": true,
+                                                    "dataType": "date",
+                                                    "isBucketed": true,
+                                                    "label": "Calls",
+                                                    "operationType": "date_histogram",
+                                                    "params": {
+                                                        "dropPartials": false,
+                                                        "includeEmptyRows": false,
+                                                        "interval": "d"
+                                                    },
+                                                    "scale": "interval",
+                                                    "sourceField": "@timestamp"
+                                                },
+                                                "4989517a-f121-4e44-9256-dfe43e87cdc5": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Avg call duration (seconds)",
+                                                    "operationType": "formula",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        },
+                                                        "formula": "average(twilio.VoiceInsights.CallSummary.duration)",
+                                                        "isFormulaBroken": false
+                                                    },
+                                                    "references": [
+                                                        "4989517a-f121-4e44-9256-dfe43e87cdc5X0"
+                                                    ],
+                                                    "scale": "ratio"
+                                                },
+                                                "4989517a-f121-4e44-9256-dfe43e87cdc5X0": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Part of Avg call duration (seconds)",
+                                                    "operationType": "average",
+                                                    "params": {
+                                                        "emptyAsNull": false
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "twilio.VoiceInsights.CallSummary.duration"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "4989517a-f121-4e44-9256-dfe43e87cdc5"
+                                        ],
+                                        "layerId": "bb8b5861-6f81-47b0-a87e-434f97d59fa0",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "bar_stacked",
+                                        "showGridlines": false,
+                                        "xAccessor": "1d25c245-bafe-44ff-8b3b-17c4b387b4ae",
+                                        "yConfig": [
+                                            {
+                                                "color": "#d36086",
+                                                "forAccessor": "4989517a-f121-4e44-9256-dfe43e87cdc5"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "legend": {
+                                    "isVisible": true,
+                                    "position": "right"
+                                },
+                                "preferredSeriesType": "bar_stacked",
+                                "title": "Empty XY chart",
+                                "valueLabels": "hide"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 15,
+                    "i": "932cd6c2-6094-48ee-ada1-89abac6aacbb",
+                    "w": 24,
+                    "x": 24,
+                    "y": 7
+                },
+                "panelIndex": "932cd6c2-6094-48ee-ada1-89abac6aacbb",
+                "title": "Call duration",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-126248c9-78ac-4042-9c44-8d6693f457eb",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "126248c9-78ac-4042-9c44-8d6693f457eb": {
+                                            "columnOrder": [
+                                                "cc38c67d-482a-4512-89ac-f2d65eb7ee7d",
+                                                "5460a254-e366-4774-bbbd-94d15261d96a",
+                                                "eb00f271-a60c-4c0f-b794-9268aab473e7"
+                                            ],
+                                            "columns": {
+                                                "5460a254-e366-4774-bbbd-94d15261d96a": {
+                                                    "customLabel": true,
+                                                    "dataType": "date",
+                                                    "isBucketed": true,
+                                                    "label": "Calls",
+                                                    "operationType": "date_histogram",
+                                                    "params": {
+                                                        "dropPartials": false,
+                                                        "includeEmptyRows": true,
+                                                        "interval": "d"
+                                                    },
+                                                    "scale": "interval",
+                                                    "sourceField": "@timestamp"
+                                                },
+                                                "cc38c67d-482a-4512-89ac-f2d65eb7ee7d": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 5 values of Call state",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "eb00f271-a60c-4c0f-b794-9268aab473e7",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "twilio.VoiceInsights.CallSummary.call_state"
+                                                },
+                                                "eb00f271-a60c-4c0f-b794-9268aab473e7": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of calls",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": false
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "axisTitlesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "fittingFunction": "None",
+                                "gridlinesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "labelsOrientation": {
+                                    "x": 0,
+                                    "yLeft": 0,
+                                    "yRight": 0
+                                },
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "eb00f271-a60c-4c0f-b794-9268aab473e7"
+                                        ],
+                                        "layerId": "126248c9-78ac-4042-9c44-8d6693f457eb",
+                                        "layerType": "data",
+                                        "palette": {
+                                            "name": "temperature",
+                                            "type": "palette"
+                                        },
+                                        "position": "top",
+                                        "seriesType": "area",
+                                        "showGridlines": false,
+                                        "splitAccessor": "cc38c67d-482a-4512-89ac-f2d65eb7ee7d",
+                                        "xAccessor": "5460a254-e366-4774-bbbd-94d15261d96a"
+                                    }
+                                ],
+                                "legend": {
+                                    "isVisible": true,
+                                    "position": "right"
+                                },
+                                "preferredSeriesType": "area",
+                                "tickLabelsVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "valueLabels": "hide",
+                                "yLeftExtent": {
+                                    "mode": "full"
+                                }
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 16,
+                    "i": "d8991078-5d44-42fd-b87b-29d64bc574a3",
+                    "w": 24,
+                    "x": 0,
+                    "y": 22
+                },
+                "panelIndex": "d8991078-5d44-42fd-b87b-29d64bc574a3",
+                "title": "Call status",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-5800173f-5c6f-4813-a5e3-f4df10a04d88",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "5800173f-5c6f-4813-a5e3-f4df10a04d88": {
+                                            "columnOrder": [
+                                                "956a55c6-4317-4bda-b88f-e35d91df60fa",
+                                                "128a3267-125a-4253-a9c4-dab2025f8f5c"
+                                            ],
+                                            "columns": {
+                                                "128a3267-125a-4253-a9c4-dab2025f8f5c": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of calls",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "956a55c6-4317-4bda-b88f-e35d91df60fa": {
+                                                    "customLabel": true,
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top carriers",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "128a3267-125a-4253-a9c4-dab2025f8f5c",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 8
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "twilio.VoiceInsights.CallSummary.from.carrier"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "axisTitlesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "fittingFunction": "None",
+                                "gridlinesVisibilitySettings": {
+                                    "x": false,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "labelsOrientation": {
+                                    "x": 0,
+                                    "yLeft": 0,
+                                    "yRight": 0
+                                },
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "128a3267-125a-4253-a9c4-dab2025f8f5c"
+                                        ],
+                                        "layerId": "5800173f-5c6f-4813-a5e3-f4df10a04d88",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "bar_horizontal",
+                                        "showGridlines": false,
+                                        "xAccessor": "956a55c6-4317-4bda-b88f-e35d91df60fa",
+                                        "yConfig": [
+                                            {
+                                                "color": "#e7664c",
+                                                "forAccessor": "128a3267-125a-4253-a9c4-dab2025f8f5c"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "legend": {
+                                    "isInside": false,
+                                    "isVisible": true,
+                                    "maxLines": 5,
+                                    "position": "left",
+                                    "shouldTruncate": true,
+                                    "showSingleSeries": false
+                                },
+                                "preferredSeriesType": "bar_horizontal",
+                                "tickLabelsVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "valueLabels": "hide",
+                                "valuesInLegend": false,
+                                "xTitle": ""
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 8,
+                    "i": "a1f2e5f4-95a0-491c-894d-5e3dd487c15f",
+                    "w": 24,
+                    "x": 24,
+                    "y": 22
+                },
+                "panelIndex": "a1f2e5f4-95a0-491c-894d-5e3dd487c15f",
+                "title": "Carriers (origination)",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-5800173f-5c6f-4813-a5e3-f4df10a04d88",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "5800173f-5c6f-4813-a5e3-f4df10a04d88": {
+                                            "columnOrder": [
+                                                "e1a2a837-4c95-473f-be64-18684e377050",
+                                                "128a3267-125a-4253-a9c4-dab2025f8f5c"
+                                            ],
+                                            "columns": {
+                                                "128a3267-125a-4253-a9c4-dab2025f8f5c": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of calls",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "e1a2a837-4c95-473f-be64-18684e377050": {
+                                                    "customLabel": true,
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top carriers",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "128a3267-125a-4253-a9c4-dab2025f8f5c",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "secondaryFields": [],
+                                                        "size": 8
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "twilio.VoiceInsights.CallSummary.to.carrier"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "axisTitlesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "fittingFunction": "None",
+                                "gridlinesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "labelsOrientation": {
+                                    "x": 0,
+                                    "yLeft": 0,
+                                    "yRight": 0
+                                },
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "128a3267-125a-4253-a9c4-dab2025f8f5c"
+                                        ],
+                                        "layerId": "5800173f-5c6f-4813-a5e3-f4df10a04d88",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "bar_horizontal_stacked",
+                                        "showGridlines": false,
+                                        "xAccessor": "e1a2a837-4c95-473f-be64-18684e377050",
+                                        "yConfig": [
+                                            {
+                                                "color": "#e7664c",
+                                                "forAccessor": "128a3267-125a-4253-a9c4-dab2025f8f5c"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "legend": {
+                                    "isVisible": true,
+                                    "position": "right"
+                                },
+                                "preferredSeriesType": "bar_horizontal_stacked",
+                                "tickLabelsVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "valueLabels": "hide"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 8,
+                    "i": "ea854ac6-fd64-4c18-8c06-26fd71424554",
+                    "w": 24,
+                    "x": 24,
+                    "y": 30
+                },
+                "panelIndex": "ea854ac6-fd64-4c18-8c06-26fd71424554",
+                "title": "Carriers (termination)",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-0e0e2274-becc-434a-99dd-1a8e3a32cbcf",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "0e0e2274-becc-434a-99dd-1a8e3a32cbcf": {
+                                            "columnOrder": [
+                                                "d9d68016-9cc8-4677-acb7-a8c35857d86c",
+                                                "a1d0704a-df55-4684-ab01-7535f1812686"
+                                            ],
+                                            "columns": {
+                                                "a1d0704a-df55-4684-ab01-7535f1812686": {
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of records",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "d9d68016-9cc8-4677-acb7-a8c35857d86c": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 10 values of Country (from)",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "a1d0704a-df55-4684-ab01-7535f1812686",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "secondaryFields": [],
+                                                        "size": 10
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "twilio.VoiceInsights.CallSummary.from.country_code"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "emsField": "iso2",
+                                "emsLayerId": "world_countries",
+                                "layerId": "0e0e2274-becc-434a-99dd-1a8e3a32cbcf",
+                                "layerType": "data",
+                                "regionAccessor": "d9d68016-9cc8-4677-acb7-a8c35857d86c",
+                                "valueAccessor": "a1d0704a-df55-4684-ab01-7535f1812686"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsChoropleth"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 14,
+                    "i": "0e7c2667-6c57-4252-b473-b74abf996458",
+                    "w": 24,
+                    "x": 0,
+                    "y": 38
+                },
+                "panelIndex": "0e7c2667-6c57-4252-b473-b74abf996458",
+                "title": "Countries (origination)",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-0e0e2274-becc-434a-99dd-1a8e3a32cbcf",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "0e0e2274-becc-434a-99dd-1a8e3a32cbcf": {
+                                            "columnOrder": [
+                                                "b7d14a2c-028c-4028-a13f-7e8b47ecc5c2",
+                                                "a1d0704a-df55-4684-ab01-7535f1812686"
+                                            ],
+                                            "columns": {
+                                                "a1d0704a-df55-4684-ab01-7535f1812686": {
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of records",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "b7d14a2c-028c-4028-a13f-7e8b47ecc5c2": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 10 values of Country (to)",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "a1d0704a-df55-4684-ab01-7535f1812686",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 10
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "twilio.VoiceInsights.CallSummary.to.country_code"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layerId": "0e0e2274-becc-434a-99dd-1a8e3a32cbcf",
+                                "layerType": "data",
+                                "regionAccessor": "b7d14a2c-028c-4028-a13f-7e8b47ecc5c2",
+                                "valueAccessor": "a1d0704a-df55-4684-ab01-7535f1812686"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsChoropleth"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 14,
+                    "i": "109065df-b1cf-4ebe-943d-b3ad76554527",
+                    "w": 24,
+                    "x": 24,
+                    "y": 38
+                },
+                "panelIndex": "109065df-b1cf-4ebe-943d-b3ad76554527",
+                "title": "Countries (termination)",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "enhancements": {}
+                },
+                "gridData": {
+                    "h": 16,
+                    "i": "f811a036-9edb-471d-86a0-9f7ba6ad45bf",
+                    "w": 48,
+                    "x": 0,
+                    "y": 52
+                },
+                "panelIndex": "f811a036-9edb-471d-86a0-9f7ba6ad45bf",
+                "panelRefName": "panel_f811a036-9edb-471d-86a0-9f7ba6ad45bf",
+                "type": "search",
+                "version": "8.3.2"
+            }
+        ],
+        "timeRestore": false,
+        "title": "Voice Dashboard",
+        "version": 1
+    },
+    "coreMigrationVersion": "8.3.2",
+    "id": "twilio-fc338990-9c0c-11ed-96e9-f94ff168535d",
+    "migrationVersion": {
+        "dashboard": "8.3.0"
+    },
+    "references": [
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "2419230f-3a48-4ea3-940a-63a1275bbfbc:indexpattern-datasource-layer-35657619-d457-4ce9-97ff-fd0a8e597203",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "2419230f-3a48-4ea3-940a-63a1275bbfbc:ab45a0a8-02d7-4422-91fa-33a892664da9",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "b738ed30-eebb-4dfa-b983-e84cc21e1fd1:indexpattern-datasource-layer-35657619-d457-4ce9-97ff-fd0a8e597203",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "b738ed30-eebb-4dfa-b983-e84cc21e1fd1:14ed5fda-93cb-4f65-855e-049a2aed7c76",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "9a956b0c-0321-4201-b088-51ebb087e190:indexpattern-datasource-layer-35657619-d457-4ce9-97ff-fd0a8e597203",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "9a956b0c-0321-4201-b088-51ebb087e190:c4edf3eb-ff07-42f8-a89f-2f0b2217eba4",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "9a956b0c-0321-4201-b088-51ebb087e190:7f742ffb-8570-448e-ab6e-c5207b68210a",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "ec43d8d5-5892-40a8-9be6-a23b46d6f2f5:indexpattern-datasource-layer-35657619-d457-4ce9-97ff-fd0a8e597203",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "ec43d8d5-5892-40a8-9be6-a23b46d6f2f5:6d71e59b-2a45-45b8-8c3b-c6f4aedf220a",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "e962e903-38df-401a-a1af-37b436288882:indexpattern-datasource-layer-98e7228c-a0f5-48fc-b86b-66b8caadd215",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "932cd6c2-6094-48ee-ada1-89abac6aacbb:indexpattern-datasource-layer-bb8b5861-6f81-47b0-a87e-434f97d59fa0",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "d8991078-5d44-42fd-b87b-29d64bc574a3:indexpattern-datasource-layer-126248c9-78ac-4042-9c44-8d6693f457eb",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "a1f2e5f4-95a0-491c-894d-5e3dd487c15f:indexpattern-datasource-layer-5800173f-5c6f-4813-a5e3-f4df10a04d88",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "ea854ac6-fd64-4c18-8c06-26fd71424554:indexpattern-datasource-layer-5800173f-5c6f-4813-a5e3-f4df10a04d88",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "0e7c2667-6c57-4252-b473-b74abf996458:indexpattern-datasource-layer-0e0e2274-becc-434a-99dd-1a8e3a32cbcf",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "109065df-b1cf-4ebe-943d-b3ad76554527:indexpattern-datasource-layer-0e0e2274-becc-434a-99dd-1a8e3a32cbcf",
+            "type": "index-pattern"
+        },
+        {
+            "id": "twilio-34385560-9c2a-11ed-96e9-f94ff168535d",
+            "name": "f811a036-9edb-471d-86a0-9f7ba6ad45bf:panel_f811a036-9edb-471d-86a0-9f7ba6ad45bf",
+            "type": "search"
+        }
+    ],
+    "type": "dashboard"
+}

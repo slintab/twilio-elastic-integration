@@ -1,0 +1,45 @@
+{
+    "attributes": {
+        "columns": [
+            "twilio.Studio.FlowExecutionEvent.execution_sid",
+            "twilio.Studio.FlowExecutionEvent.flow_sid",
+            "twilio.Studio.FlowExecutionEvent.contact_channel_address",
+            "twilio.Studio.FlowExecutionEvent.ended_reason",
+            "twilio.Studio.FlowExecutionEvent.date_updated",
+            "twilio.Studio.FlowExecutionEvent.date_created"
+        ],
+        "description": "",
+        "grid": {},
+        "hideChart": false,
+        "kibanaSavedObjectMeta": {
+            "searchSourceJSON": {
+                "filter": [],
+                "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                "query": {
+                    "language": "kuery",
+                    "query": "event.action : \"com.twilio.studio.flow.execution.ended\""
+                }
+            }
+        },
+        "sort": [
+            [
+                "@timestamp",
+                "desc"
+            ]
+        ],
+        "title": "Completed execution log"
+    },
+    "coreMigrationVersion": "8.3.2",
+    "id": "twilio-50cc0420-9b75-11ed-96e9-f94ff168535d",
+    "migrationVersion": {
+        "search": "8.0.0"
+    },
+    "references": [
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+            "type": "index-pattern"
+        }
+    ],
+    "type": "search"
+}

@@ -1,0 +1,800 @@
+{
+    "attributes": {
+        "controlGroupInput": {
+            "chainingSystem": "HIERARCHICAL",
+            "controlStyle": "oneLine",
+            "ignoreParentSettingsJSON": "{\"ignoreFilters\":false,\"ignoreQuery\":false,\"ignoreTimerange\":false,\"ignoreValidations\":false}",
+            "panelsJSON": "{\"677c3665-7286-4c8c-96f8-285763171d3d\":{\"order\":0,\"width\":\"medium\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"twilio.Studio.FlowExecutionEvent.flow_sid\",\"title\":\"Flow SID\",\"id\":\"677c3665-7286-4c8c-96f8-285763171d3d\",\"enhancements\":{}}}}"
+        },
+        "description": "",
+        "hits": 0,
+        "kibanaSavedObjectMeta": {
+            "searchSourceJSON": {
+                "filter": [],
+                "query": {
+                    "language": "kuery",
+                    "query": ""
+                }
+            }
+        },
+        "optionsJSON": {
+            "hidePanelTitles": false,
+            "syncColors": false,
+            "syncTooltips": false,
+            "useMargins": true
+        },
+        "panelsJSON": [
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-62baf0ec-7fa6-4125-916d-0f12ce0e3ec2",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "62baf0ec-7fa6-4125-916d-0f12ce0e3ec2": {
+                                            "columnOrder": [
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087a",
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087aX0",
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087aX1",
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087aX2"
+                                            ],
+                                            "columns": {
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087a": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Executions ongoing",
+                                                    "operationType": "formula",
+                                                    "params": {
+                                                        "formula": "subtract(count(kql='event.action : \"com.twilio.studio.flow.execution.started\" '),count(kql='event.action : \"com.twilio.studio.flow.execution.ended\" '))",
+                                                        "isFormulaBroken": false
+                                                    },
+                                                    "references": [
+                                                        "8d2c3507-a5d4-40db-b9f8-5eea17aa087aX2"
+                                                    ],
+                                                    "scale": "ratio"
+                                                },
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087aX0": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "event.action : \"com.twilio.studio.flow.execution.started\" "
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Part of Executions ongoing",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": false
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087aX1": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "event.action : \"com.twilio.studio.flow.execution.ended\" "
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Part of Executions ongoing",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": false
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087aX2": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Part of Executions ongoing",
+                                                    "operationType": "math",
+                                                    "params": {
+                                                        "tinymathAst": {
+                                                            "args": [
+                                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087aX0",
+                                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087aX1"
+                                                            ],
+                                                            "location": {
+                                                                "max": 151,
+                                                                "min": 0
+                                                            },
+                                                            "name": "subtract",
+                                                            "text": "subtract(count(kql='event.action : \"com.twilio.studio.flow.execution.started\" '),count(kql='event.action : \"com.twilio.studio.flow.execution.ended\" '))",
+                                                            "type": "function"
+                                                        }
+                                                    },
+                                                    "references": [
+                                                        "8d2c3507-a5d4-40db-b9f8-5eea17aa087aX0",
+                                                        "8d2c3507-a5d4-40db-b9f8-5eea17aa087aX1"
+                                                    ],
+                                                    "scale": "ratio"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "accessor": "8d2c3507-a5d4-40db-b9f8-5eea17aa087a",
+                                "layerId": "62baf0ec-7fa6-4125-916d-0f12ce0e3ec2",
+                                "layerType": "data",
+                                "size": "l",
+                                "textAlign": "center"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": true
+                },
+                "gridData": {
+                    "h": 6,
+                    "i": "9f886e04-c8b4-4a8b-85fb-e609eab2293f",
+                    "w": 12,
+                    "x": 0,
+                    "y": 0
+                },
+                "panelIndex": "9f886e04-c8b4-4a8b-85fb-e609eab2293f",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-62baf0ec-7fa6-4125-916d-0f12ce0e3ec2",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "62baf0ec-7fa6-4125-916d-0f12ce0e3ec2": {
+                                            "columnOrder": [
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087a"
+                                            ],
+                                            "columns": {
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087a": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "event.action : com.twilio.studio.flow.execution.started and @timestamp\u003c= now/d and @timestamp \u003e= now-1d/d"
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Executions today",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "accessor": "8d2c3507-a5d4-40db-b9f8-5eea17aa087a",
+                                "layerId": "62baf0ec-7fa6-4125-916d-0f12ce0e3ec2",
+                                "layerType": "data",
+                                "size": "l",
+                                "textAlign": "center"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": true
+                },
+                "gridData": {
+                    "h": 6,
+                    "i": "e6e4f33e-be03-4be3-ba75-afca597e56c1",
+                    "w": 12,
+                    "x": 12,
+                    "y": 0
+                },
+                "panelIndex": "e6e4f33e-be03-4be3-ba75-afca597e56c1",
+                "title": "",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-62baf0ec-7fa6-4125-916d-0f12ce0e3ec2",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "62baf0ec-7fa6-4125-916d-0f12ce0e3ec2": {
+                                            "columnOrder": [
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087a"
+                                            ],
+                                            "columns": {
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087a": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "event.action : com.twilio.studio.flow.execution.started and @timestamp\u003c= now/d and @timestamp \u003e= now-7d/d"
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Executions this week",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "accessor": "8d2c3507-a5d4-40db-b9f8-5eea17aa087a",
+                                "layerId": "62baf0ec-7fa6-4125-916d-0f12ce0e3ec2",
+                                "layerType": "data",
+                                "size": "l",
+                                "textAlign": "center"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": true
+                },
+                "gridData": {
+                    "h": 6,
+                    "i": "7121a210-bd6c-4a3f-ae55-6dd99d59d571",
+                    "w": 11,
+                    "x": 24,
+                    "y": 0
+                },
+                "panelIndex": "7121a210-bd6c-4a3f-ae55-6dd99d59d571",
+                "title": "",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-62baf0ec-7fa6-4125-916d-0f12ce0e3ec2",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "62baf0ec-7fa6-4125-916d-0f12ce0e3ec2": {
+                                            "columnOrder": [
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087a"
+                                            ],
+                                            "columns": {
+                                                "8d2c3507-a5d4-40db-b9f8-5eea17aa087a": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": ""
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Unique callers",
+                                                    "operationType": "unique_count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "twilio.Studio.FlowExecutionEvent.contact_channel_address"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "accessor": "8d2c3507-a5d4-40db-b9f8-5eea17aa087a",
+                                "layerId": "62baf0ec-7fa6-4125-916d-0f12ce0e3ec2",
+                                "layerType": "data",
+                                "size": "l",
+                                "textAlign": "center"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": true
+                },
+                "gridData": {
+                    "h": 6,
+                    "i": "ae04e8f7-3bf0-43e0-9e9b-2a646d1cefd6",
+                    "w": 12,
+                    "x": 35,
+                    "y": 0
+                },
+                "panelIndex": "ae04e8f7-3bf0-43e0-9e9b-2a646d1cefd6",
+                "title": "",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-f328fac9-9d41-4732-b5dd-a1c0acfcdd24",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "f328fac9-9d41-4732-b5dd-a1c0acfcdd24": {
+                                            "columnOrder": [
+                                                "6750c488-2305-4ea9-ae2a-e5ed06063165",
+                                                "84bbeb3c-1167-41dc-bdad-21021ae17a65"
+                                            ],
+                                            "columns": {
+                                                "6750c488-2305-4ea9-ae2a-e5ed06063165": {
+                                                    "customLabel": true,
+                                                    "dataType": "date",
+                                                    "isBucketed": true,
+                                                    "label": "Calls ",
+                                                    "operationType": "date_histogram",
+                                                    "params": {
+                                                        "dropPartials": true,
+                                                        "includeEmptyRows": true,
+                                                        "interval": "d"
+                                                    },
+                                                    "scale": "interval",
+                                                    "sourceField": "@timestamp"
+                                                },
+                                                "84bbeb3c-1167-41dc-bdad-21021ae17a65": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "event.action : \"com.twilio.studio.flow.execution.started\" "
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Count of calls",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "84bbeb3c-1167-41dc-bdad-21021ae17a65"
+                                        ],
+                                        "layerId": "f328fac9-9d41-4732-b5dd-a1c0acfcdd24",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "bar",
+                                        "showGridlines": false,
+                                        "xAccessor": "6750c488-2305-4ea9-ae2a-e5ed06063165",
+                                        "yConfig": [
+                                            {
+                                                "color": "#d36086",
+                                                "forAccessor": "84bbeb3c-1167-41dc-bdad-21021ae17a65"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "legend": {
+                                    "isVisible": true,
+                                    "position": "right"
+                                },
+                                "preferredSeriesType": "bar",
+                                "title": "Empty XY chart",
+                                "valueLabels": "hide"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 11,
+                    "i": "f6ed6469-fd90-4ef2-859f-4b3a62c21384",
+                    "w": 47,
+                    "x": 0,
+                    "y": 6
+                },
+                "panelIndex": "f6ed6469-fd90-4ef2-859f-4b3a62c21384",
+                "title": "Call frequency",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-f328fac9-9d41-4732-b5dd-a1c0acfcdd24",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "f328fac9-9d41-4732-b5dd-a1c0acfcdd24": {
+                                            "columnOrder": [
+                                                "04423a2a-ba52-4188-b201-861cd174046b",
+                                                "84bbeb3c-1167-41dc-bdad-21021ae17a65"
+                                            ],
+                                            "columns": {
+                                                "04423a2a-ba52-4188-b201-861cd174046b": {
+                                                    "customLabel": true,
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Caller numbers",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "84bbeb3c-1167-41dc-bdad-21021ae17a65",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "twilio.Studio.FlowExecutionEvent.contact_channel_address"
+                                                },
+                                                "84bbeb3c-1167-41dc-bdad-21021ae17a65": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "event.action : \"com.twilio.studio.flow.execution.started\" "
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Count of calls",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "84bbeb3c-1167-41dc-bdad-21021ae17a65"
+                                        ],
+                                        "layerId": "f328fac9-9d41-4732-b5dd-a1c0acfcdd24",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "bar",
+                                        "showGridlines": false,
+                                        "xAccessor": "04423a2a-ba52-4188-b201-861cd174046b",
+                                        "yConfig": [
+                                            {
+                                                "color": "#54b399",
+                                                "forAccessor": "84bbeb3c-1167-41dc-bdad-21021ae17a65"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "legend": {
+                                    "isInside": false,
+                                    "isVisible": true,
+                                    "position": "bottom"
+                                },
+                                "preferredSeriesType": "bar",
+                                "title": "Empty XY chart",
+                                "valueLabels": "hide",
+                                "valuesInLegend": false
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 15,
+                    "i": "b10254f5-39ab-45a4-b3d2-2be5477bf3a2",
+                    "w": 22,
+                    "x": 0,
+                    "y": 17
+                },
+                "panelIndex": "b10254f5-39ab-45a4-b3d2-2be5477bf3a2",
+                "title": "Top callers",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+                                "name": "indexpattern-datasource-layer-f328fac9-9d41-4732-b5dd-a1c0acfcdd24",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "f328fac9-9d41-4732-b5dd-a1c0acfcdd24": {
+                                            "columnOrder": [
+                                                "c3bce912-0831-4db6-b03e-6c3660dbdeab",
+                                                "84bbeb3c-1167-41dc-bdad-21021ae17a65"
+                                            ],
+                                            "columns": {
+                                                "84bbeb3c-1167-41dc-bdad-21021ae17a65": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "twilio.Studio.FlowStepEvent.transitioned_to : \"Ended\" "
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Count of calls",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "c3bce912-0831-4db6-b03e-6c3660dbdeab": {
+                                                    "customLabel": true,
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Termination steps",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "84bbeb3c-1167-41dc-bdad-21021ae17a65",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "twilio.Studio.FlowStepEvent.transitioned_from"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "84bbeb3c-1167-41dc-bdad-21021ae17a65"
+                                        ],
+                                        "layerId": "f328fac9-9d41-4732-b5dd-a1c0acfcdd24",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "bar",
+                                        "showGridlines": false,
+                                        "xAccessor": "c3bce912-0831-4db6-b03e-6c3660dbdeab",
+                                        "yConfig": [
+                                            {
+                                                "color": "#6092c0",
+                                                "forAccessor": "84bbeb3c-1167-41dc-bdad-21021ae17a65"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "legend": {
+                                    "isInside": false,
+                                    "isVisible": true,
+                                    "position": "bottom"
+                                },
+                                "preferredSeriesType": "bar",
+                                "title": "Empty XY chart",
+                                "valueLabels": "hide",
+                                "valuesInLegend": false
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 15,
+                    "i": "a0d91d2c-ad1d-4c7a-ba9f-c1f24396c6a8",
+                    "w": 25,
+                    "x": 22,
+                    "y": 17
+                },
+                "panelIndex": "a0d91d2c-ad1d-4c7a-ba9f-c1f24396c6a8",
+                "title": "Top termination steps",
+                "type": "lens",
+                "version": "8.3.2"
+            },
+            {
+                "embeddableConfig": {
+                    "enhancements": {}
+                },
+                "gridData": {
+                    "h": 16,
+                    "i": "d086bf54-771d-4c59-ba62-c1ed3c5b022d",
+                    "w": 47,
+                    "x": 0,
+                    "y": 32
+                },
+                "panelIndex": "d086bf54-771d-4c59-ba62-c1ed3c5b022d",
+                "panelRefName": "panel_d086bf54-771d-4c59-ba62-c1ed3c5b022d",
+                "type": "search",
+                "version": "8.3.2"
+            }
+        ],
+        "timeRestore": false,
+        "title": "Studio Dashboard",
+        "version": 1
+    },
+    "coreMigrationVersion": "8.3.2",
+    "id": "twilio-3c164140-9b6f-11ed-96e9-f94ff168535d",
+    "migrationVersion": {
+        "dashboard": "8.3.0"
+    },
+    "references": [
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "9f886e04-c8b4-4a8b-85fb-e609eab2293f:indexpattern-datasource-layer-62baf0ec-7fa6-4125-916d-0f12ce0e3ec2",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "e6e4f33e-be03-4be3-ba75-afca597e56c1:indexpattern-datasource-layer-62baf0ec-7fa6-4125-916d-0f12ce0e3ec2",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "7121a210-bd6c-4a3f-ae55-6dd99d59d571:indexpattern-datasource-layer-62baf0ec-7fa6-4125-916d-0f12ce0e3ec2",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "ae04e8f7-3bf0-43e0-9e9b-2a646d1cefd6:indexpattern-datasource-layer-62baf0ec-7fa6-4125-916d-0f12ce0e3ec2",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "f6ed6469-fd90-4ef2-859f-4b3a62c21384:indexpattern-datasource-layer-f328fac9-9d41-4732-b5dd-a1c0acfcdd24",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "b10254f5-39ab-45a4-b3d2-2be5477bf3a2:indexpattern-datasource-layer-f328fac9-9d41-4732-b5dd-a1c0acfcdd24",
+            "type": "index-pattern"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "a0d91d2c-ad1d-4c7a-ba9f-c1f24396c6a8:indexpattern-datasource-layer-f328fac9-9d41-4732-b5dd-a1c0acfcdd24",
+            "type": "index-pattern"
+        },
+        {
+            "id": "twilio-50cc0420-9b75-11ed-96e9-f94ff168535d",
+            "name": "d086bf54-771d-4c59-ba62-c1ed3c5b022d:panel_d086bf54-771d-4c59-ba62-c1ed3c5b022d",
+            "type": "search"
+        },
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "controlGroup_677c3665-7286-4c8c-96f8-285763171d3d:optionsListDataView",
+            "type": "index-pattern"
+        }
+    ],
+    "type": "dashboard"
+}

@@ -1,0 +1,70 @@
+{
+    "attributes": {
+        "columns": [
+            "twilio.VoiceInsights.CallSummary.call_sid",
+            "twilio.VoiceInsights.CallSummary.from.caller",
+            "twilio.VoiceInsights.CallSummary.to.callee",
+            "twilio.VoiceInsights.CallSummary.duration",
+            "twilio.VoiceInsights.CallSummary.call_state",
+            "twilio.VoiceInsights.CallSummary.from.carrier",
+            "twilio.VoiceInsights.CallSummary.to.carrier",
+            "twilio.VoiceInsights.CallSummary.from.country_code",
+            "twilio.VoiceInsights.CallSummary.to.country_code",
+            "twilio.VoiceInsights.CallSummary.properties.last_sip_response_num"
+        ],
+        "description": "",
+        "grid": {
+            "columns": {
+                "twilio.VoiceInsights.CallSummary.duration": {
+                    "width": 101.6
+                },
+                "twilio.VoiceInsights.CallSummary.from.callee": {
+                    "width": 86
+                },
+                "twilio.VoiceInsights.CallSummary.from.caller": {
+                    "width": 100
+                },
+                "twilio.VoiceInsights.CallSummary.from.carrier": {
+                    "width": 100
+                },
+                "twilio.VoiceInsights.CallSummary.properties.last_sip_response_num": {
+                    "width": 40
+                },
+                "twilio.VoiceInsights.CallSummary.to.callee": {
+                    "width": 136
+                }
+            }
+        },
+        "hideChart": false,
+        "kibanaSavedObjectMeta": {
+            "searchSourceJSON": {
+                "filter": [],
+                "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                "query": {
+                    "language": "kuery",
+                    "query": "event.action : \"com.twilio.voice.insights.call-summary.complete\" "
+                }
+            }
+        },
+        "sort": [
+            [
+                "@timestamp",
+                "desc"
+            ]
+        ],
+        "title": "Call log"
+    },
+    "coreMigrationVersion": "8.3.2",
+    "id": "twilio-34385560-9c2a-11ed-96e9-f94ff168535d",
+    "migrationVersion": {
+        "search": "8.0.0"
+    },
+    "references": [
+        {
+            "id": "2444a310-99e2-11ed-96e9-f94ff168535d",
+            "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+            "type": "index-pattern"
+        }
+    ],
+    "type": "search"
+}
